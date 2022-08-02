@@ -1,0 +1,59 @@
+{
+  "kind": "collectionType",
+  "collectionName": "offers",
+  "info": {
+    "singularName": "offer",
+    "pluralName": "offers",
+    "displayName": "Offer"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "offer_id": {
+      "type": "uid",
+      "required": true
+    },
+    "title": {
+      "type": "string"
+    },
+    "requests": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::comic.comic",
+      "inversedBy": "offers"
+    },
+    "trade_offers": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::comic.comic",
+      "inversedBy": "offers"
+    },
+    "user_responding": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "responding_user"
+    },
+    "response": {
+      "type": "enumeration",
+      "enum": [
+        "waiting on response",
+        "accepted",
+        "negotiating",
+        "denied"
+      ],
+      "default": "waiting on response"
+    },
+    "deal": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::deal.deal",
+      "inversedBy": "offer"
+    },
+    "payment_offer": {
+      "type": "decimal"
+    }
+  }
+}

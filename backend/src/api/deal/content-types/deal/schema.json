@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "deals",
+  "info": {
+    "singularName": "deal",
+    "pluralName": "deals",
+    "displayName": "deal"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "payment_status": {
+      "type": "enumeration",
+      "enum": [
+        "invoiced/not yet paid",
+        "paid to escrow",
+        "payment released",
+        "payment refunded"
+      ],
+      "required": true,
+      "default": "invoiced/not yet paid"
+    },
+    "offer": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::offer.offer",
+      "inversedBy": "deal"
+    }
+  }
+}

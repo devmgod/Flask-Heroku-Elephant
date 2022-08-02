@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pedigrees",
+  "info": {
+    "singularName": "pedigree",
+    "pluralName": "pedigrees",
+    "displayName": "Pedigree",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext",
+      "required": true,
+      "minLength": 100
+    },
+    "comic": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::comic.comic",
+      "inversedBy": "pedigrees"
+    },
+    "media": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}
