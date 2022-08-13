@@ -1,0 +1,3 @@
+- read installation info in corona template index.html (original)
+  - need to run gulp serve from the same folder as where gulpfile.js is located (in templates) for it to watch for changes and modify the css file (?)
+- 
