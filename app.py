@@ -12,6 +12,8 @@ import socket
 import pdb
 # from date_and_time_functions import *
 
+from StrapiCRUD import Articles    
+
 #TODO: TEMPORARY - ***** move these to environment variables and put in heroku *****
 # from secrets import API_SECRET_KEY
 
@@ -59,8 +61,16 @@ app.config['DEBUG_TB_INTERCEPT_REDIRECTS'] = False
 #     departed = Departed.query.all()
 #     return render_template("index.html", departed=departed)
 
-@app.route('/')
+strapi_url = "http://localhost:1337/api"
+
+@app.route('/', methods=["GET"])
 def home():
     """ home page - should give login option and information about app"""
-    return render_template("index.html")
+
+    # articles = Articles()
+    # print(articles.all())
+
+    articles = requests.get(strapi_url + "/articles?populate=*")
+
+    return render_template("index.html", articles=articles)
 
