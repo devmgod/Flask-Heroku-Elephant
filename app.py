@@ -54,12 +54,7 @@ app.config['DEBUG_TB_INTERCEPT_REDIRECTS'] = False
 
 # WTF_CSRF_SECRET_KEY = 'magic'
 
-# @app.route('/')
-# def home():
-#     """ home page - should give login option and information about app"""
-    
-#     departed = Departed.query.all()
-#     return render_template("index.html", departed=departed)
+
 
 strapi_url = "http://localhost:1337/api"
 
