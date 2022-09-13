@@ -177,7 +177,7 @@ class User:
     def __init__(self):
         self.api_url = "http://localhost:1337/api"
 
-    def create(self, username, email, provider, password, resetPasswordToken, confirmation Token, confirmed, blocked, role, articles, comics, messages, responding_user):
+    def create(self, username, email, provider, password, resetPasswordToken, confirmationToken, confirmed, blocked, role, articles, comics, messages, responding_user):
         #create a User (generate it's own unique id)
         # (see definitions in strapi)
         #return the id number and all fields as json
@@ -191,7 +191,7 @@ class User:
         #get one user and return all fields as json
         return
 
-    def update(self,  username, email, provider, password, resetPasswordToken, confirmation Token, confirmed, blocked, role, articles, comics, messages, responding_user):
+    def update(self,  username, email, provider, password, resetPasswordToken, confirmationToken, confirmed, blocked, role, articles, comics, messages, responding_user):
         #update one user by id - other fields are optional
         #return all fields (updated) as json
         return
