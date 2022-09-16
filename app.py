@@ -64,16 +64,16 @@ strapi_url = "http://localhost:1337/api"
 #     data = request.json
 #     return render_template("index.html", articles=data)
 
-def request_article(issue):
-    url = strapi_url + "/articles?populate=*"
-    response = requests.get(url)
-    r = response.json()
-    articles = json.loads(r)
+# def request_article(issue):
+#     url = strapi_url + "/articles?populate=*"
+#     response = requests.get(url)
+#     r = response.json()
+#     # articles = json.loads(r)
 
 
-    title1=articles['data'][issue]['attributes']['title']
+#     title1=articles['data'][issue]['attributes']['title']
 
-    return {'title1':title1}
+#     return {'title1':title1}
 
 
 
@@ -84,6 +84,6 @@ def home():
     # articles = Articles()
     # print(articles.all())
 
-    title1 = request_article(0)
-    return render_template("index.html", article1=title1)
+    # title1 = request_article(0)
+    return render_template("index.html")
 
