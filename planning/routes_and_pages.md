@@ -1,6 +1,6 @@
 # Routes/Pages List
  
-- index (/) 
+- index (/)  
   - Navigation
       - /register and /login links
       - my-account page link

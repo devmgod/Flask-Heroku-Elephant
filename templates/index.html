@@ -3,6 +3,8 @@
 {% block title %}The COMIC SWAP {% endblock %}
 {% block meta_content %}trade comics safely and easily {% endblock %}
 
+
+
 {% block links %}
 
 
@@ -14,13 +16,49 @@
 {% block content %}
 
 
-    <h1>The Comic Swap h1</h1>
-    <h2>h2</h2>
-    <h3>h3</h3>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore eos quos accusamus velit laboriosam neque quam fugiat deleniti ea voluptatum dolorem quidem magnam dolorum excepturi ipsum cumque, tenetur aliquam maxime.</p>
 
-    <h2>Articles</h2>
-   
-    {{ articles }}
+    <h1>The Comic Swap - HOME</h1>
+
+   <br>
+    
+    <!-- CAROUSEL -->
+
+    <script>
+        window.addEventListener('load', function(){
+          new Glider(document.querySelector('.glider'), {
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            draggable: true,
+            dots: '.dots',
+            arrows: {
+              prev: '.glider-prev',
+              next: '.glider-next'
+          }
+        });
+      })
+  </script>
+
+
+    <div class="glider-contain">
+        <div class="glider">
+          <div> <img src="../static/images/batman-p-250.jpg"></img></div>
+          <div> <img src="../static/images/captain_america-p-250.jpg"></img></div>
+          <div> <img src="../static/images/Dr_strange-p-250.jpg"></img></div>
+          <div> <img src="../static/images/fantastic4_and_black_panther-p-250.jpg"></img></div>
+          <div> <img src="../static/images/iron_man-p-250.webp"></img></div>
+          <div> <img src="../static/images/spider_man_coolest_pic-p-250.jpg"></img></div>
+          <div> <img src="../static/images/superman-p-250.jpg"></img></div>
+          <div> <img src="../static/images/wonder_woman_cooler-p-250.jpg"></img></div>
+          <div> <img src="../static/images/x-men_kitty.jpg"></img></div>
+        </div>
+      
+        <button aria-label="Previous" class="glider-prev">«</button>
+        <button aria-label="Next" class="glider-next">»</button>
+        <div role="tablist" class="dots"></div>
+      </div>
+
+    <!-- END CAROUSEL -->
+
+
 
 {% endblock %}
