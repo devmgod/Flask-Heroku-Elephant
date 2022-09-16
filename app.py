@@ -94,3 +94,24 @@ def about():
  
     return render_template("about.html")
 
+@app.route('/messages', methods=["GET"])
+def messages():
+    """ messages page - should have full CRUD internal messaging capability"""
+
+ 
+    return render_template("messages.html")
+
+@app.route('/mystuff', methods=["GET"])
+def mystuff():
+    """ My Stuff page - should have link to user's library of trade offerings, list of offers made, offers received, things being shipped, books that they are watching for..."""
+
+ 
+    return render_template("mystuff.html")
+
+@app.route('/search', methods=["GET"])
+def search():
+    """ Search page - should default to most popular titles available, and be able to search books by title, date range, pedigree, condition, price range..."""
+
+ 
+    return render_template("search.html")
+
