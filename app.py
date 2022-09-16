@@ -87,3 +87,10 @@ def home():
     # title1 = request_article(0)
     return render_template("index.html")
 
+@app.route('/about', methods=["GET"])
+def about():
+    """ about page - should tell about company and benefits"""
+
+ 
+    return render_template("about.html")
+
