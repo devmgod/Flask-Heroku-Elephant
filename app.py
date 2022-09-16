@@ -81,11 +81,28 @@ strapi_url = "http://localhost:1337/api"
 def home():
     """ home page - should give login option and information about app"""
 
-    # articles = Articles()
-    # print(articles.all())
-
-    # title1 = request_article(0)
     return render_template("index.html")
+
+
+@app.route('/login', methods=["GET"])
+def login():
+    """ login page - should have a form, check the data, and pass along - use sessions to maintain login for ___ hours..."""
+
+    return render_template("login.html")
+
+@app.route('/register', methods=["GET"])
+def register():
+    """ register page - should have a form, check the data, and pass along - use sessions to maintain login for ___ hours..."""
+
+ 
+    return render_template("register.html")
+
+@app.route('/myaccount', methods=["GET"])
+def myaccount():
+    """ My Account page - should have CRUD functionality for personal info, preferences, credit card on file, etc...."""
+
+ 
+    return render_template("myaccount.html")
 
 @app.route('/about', methods=["GET"])
 def about():
