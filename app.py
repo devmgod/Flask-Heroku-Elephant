@@ -84,6 +84,7 @@ def home():
     return render_template("index.html")
 
 
+
 @app.route('/login', methods=["GET"])
 def login():
     """ login page - should have a form, check the data, and pass along - use sessions to maintain login for ___ hours..."""
@@ -135,7 +136,46 @@ def comicdetail():
 @app.route('/search', methods=["GET"])
 def search():
     """ Search page - should default to most popular titles available, and be able to search books by title, date range, pedigree, condition, price range..."""
-
  
     return render_template("search.html")
+
+
+
+###############################  MAIL ROUTES #################################
+
+@app.route('/inbox', methods=["GET"])
+def inbox():
+    """ inbox page - should show all messages recieved from members with pagination"""
+ 
+    return render_template("inbox.html")
+
+
+@app.route('/sent', methods=["GET"])
+def sent():
+    """ sent comicswap mail page - should show a list of all messages sent from user with pagination and clickable to maildetail and have a reply and delete button"""
+ 
+    return render_template("sent.html")
+
+
+@app.route('/drafts', methods=["GET"])
+def drafts():
+    """ sent comicswap mail page - should show all messages sent between members with pagination with save and send buttons"""
+ 
+    return render_template("drafts.html")
+
+
+@app.route('/maildetail', methods=["GET"])
+def maildetail():
+    """ single comicswap email page - should show single message sent between members for closer reading and include a reply button and a delete button (possibly forward?) """
+ 
+    return render_template("maildetail.html")
+
+
+@app.route('/newmail', methods=["GET"])
+def newmail():
+    """ write an email page - should show form to create an e-mail and send"""
+ 
+    return render_template("newmail.html")
+
+
 

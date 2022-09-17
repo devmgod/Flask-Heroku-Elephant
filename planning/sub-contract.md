@@ -1,0 +1,5 @@
+- Strapi CRUD methods
+- financial API/SHOPPING CART?
+- Security sign-in/out
+- devops it to heroku/netlify
+- 
