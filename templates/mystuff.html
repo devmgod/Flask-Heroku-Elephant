@@ -17,9 +17,99 @@
 
 
 
-    <h1>MY STUFF</h1>
+    <h1>MY Stuff</h1>
+    <h2>My Trades</h2>
 
-   <br><br>
+    <table class="table table-striped mb-5">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Image</th>
+            <th scope="col">Username</th>
+            <th scope="col">Comic ID</th>
+            <th scope="col">In/Outgoing</th>
+            <th scope="col">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="clickable-table-row" data-href="/comicdetail">
+            <th scope="row">1</th>
+            <td class="table-image"><img src="../static/images/batman-p-250.jpg"></img></td>
+            <td>Markymark</td>
+            <td>12345</td>
+            <td>Outgoing</td>
+            <td>In transit</td>
+          </tr>
+          <tr class="clickable-table-row" data-href="/comicdetail">
+            <th scope="row">2</th>
+            <td class="table-image"><img src="../static/images/captain_america-p-250.jpg"></img></td>
+            <td>Aragorn1</td>
+            <td>ou812</td>
+            <td>Incoming</td>
+            <td>In transit</td>
+          </tr>
+          
+            <tr class="clickable-table-row" data-href="/comicdetail">
+                <th scope="row">3</th>
+                <td class="table-image"><img src="../static/images/Dr_strange-p-250.jpg"></img></td>
+                <td>Frodo</td>
+                <td>2468</td>
+                <td>Sent</td>
+                <td>Completed</td>
+                </tr>
+            <tr class="clickable-table-row" data-href="/comicdetail">
+                <th scope="row">4</th>
+                <td class="table-image"><img src="../static/images/fantastic4_and_black_panther-p-250.jpg"></img></td>
+                <td>Sam</td>
+                <td>13579</td>
+                <td>Received</td>
+                <td>Completed</td>
+            </tr>
+        </tbody>
+      </table>
+
+
+    <h2>My Comic Collection</h2>
+    <table class="table table-striped mb-5">
+        <thead>
+          <tr class="clickable-table-row" data-href="/comicdetail">
+            <th scope="col">#</th>
+            <th scope="col">Image</th>
+            <th scope="col">Title</th>
+            <th scope="col">Issue #</th>
+            <th scope="col">year</th>
+            <th scope="col">Grade</th>
+            <th scope="col">Pedigree</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="clickable-table-row" data-href="/comicdetail">
+            <th scope="row"  data-comic-id="1357">1</th>
+            <td class="table-image"><img src="../static/images/batman-p-250.jpg"></img></td>
+            <td>Batman</td>
+            <td>101</td>
+            <td>1975</td>
+            <td>9.0</td>
+            <td>Bowling Green</td>
+          </tr>
+          <tr class="clickable-table-row" data-href="/comicdetail">
+            <th scope="row"  data-comic-id="2468">2</th>
+            <td class="table-image"><img src="../static/images/captain_america-p-250.jpg"></img></td>
+            <td>Captain America</td>
+            <td>37</td>
+            <td>1974</td>
+            <td>8.9</td>
+            <td>Boston</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- SCRIPT TO MAKE WHOLE TABLE ROW CLICKABLE -->
+      <script>
+        $('tr[data-href]').on("click", function() {
+            document.location = $(this).data('href');
+        });
+    </script>
     
   
 

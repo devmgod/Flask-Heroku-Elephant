@@ -122,8 +122,15 @@ def messages():
 def mystuff():
     """ My Stuff page - should have link to user's library of trade offerings, list of offers made, offers received, things being shipped, books that they are watching for..."""
 
- 
     return render_template("mystuff.html")
+
+
+@app.route('/comicdetail', methods=["GET"])
+def comicdetail():
+    """ Comic Detail page - should have links to a specific user's comic with all details and option to edit it"""
+
+    return render_template("comic-detail.html")
+
 
 @app.route('/search', methods=["GET"])
 def search():

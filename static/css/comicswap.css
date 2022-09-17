@@ -146,3 +146,28 @@ h3 {
 .centered {
   text-align: center;
 }
+
+.comic-box {
+  background-color: whitesmoke;
+  padding: 10px;
+  margin: 10px;
+  width: 260px;
+  height: auto;
+}
+
+.shadow-demo-2 {
+  padding: 10px;
+  margin: 10px;
+  width: 260px;
+  height: auto;
+  background-color: #000;
+}
+
+.table-image img {
+  width: 60px;
+  height: auto;
+}
+
+.clickable-table-row {
+  cursor: pointer;
+}
