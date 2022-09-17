@@ -171,3 +171,8 @@ h3 {
 .clickable-table-row {
   cursor: pointer;
 }
+
+#pedigree-select {
+  background-color: black;
+  color: white;
+}

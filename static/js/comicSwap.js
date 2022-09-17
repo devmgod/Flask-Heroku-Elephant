@@ -35,4 +35,9 @@ window.addEventListener('load', function(){
       }
     ]
   });
+
+  //SCRIPT TO MAKE WHOLE TABLE ROW CLICKABLE
+        $('tr[data-href]').on("click", function() {
+            document.location = $(this).data('href');
+        });
 })

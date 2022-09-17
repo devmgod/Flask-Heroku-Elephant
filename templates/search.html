@@ -17,7 +17,346 @@
 
 
 
-    <h1>SEARCH</h1>
+    <h1>COMICS FOR SALE AND TRADE</h1>
+    <div class="row">
+        <div class="col-md-2">
+            <!-- Search box -->
+            <section>
+                <h5>Refine Your Search</h5>
+                <form>
+                    <!-- Title input -->
+                    <div class="form-outline mb-4">
+                    <input
+                        type="text"
+                        id="title"
+                        class="form-control"
+                        autocomplete="off"
+                        style="
+                        background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAUBJREFUOBGVVE2ORUAQLvIS4gwzEysHkHgnkMiEc4zEJXCMNwtWTmDh3UGcYoaFhZUFCzFVnu4wIaiE+vvq6+6qTgthGH6O4/jA7x1OiCAIPwj7CoLgSXDxSjEVzAt9k01CBKdWfsFf/2WNuEwc2YqigKZpK9glAlVVwTTNbQJZlnlCkiTAZnF/mePB2biRdhwHdF2HJEmgaRrwPA+qqoI4jle5/8XkXzrCFoHg+/5ICdpm13UTho7Q9/0WnsfwiL/ouHwHrJgQR8WEwVG+oXpMPaDAkdzvd7AsC8qyhCiKJjiRnCKwbRsMw9hcQ5zv9maSBeu6hjRNYRgGFuKaCNwjkjzPoSiK1d1gDDecQobOBwswzabD/D3Np7AHOIrvNpHmPI+Kc2RZBm3bcp8wuwSIot7QQ0PznoR6wYSK0Xb/AGVLcWwc7Ng3AAAAAElFTkSuQmCC');
+                        background-repeat: no-repeat;
+                        background-attachment: scroll;
+                        background-size: 16px 18px;
+                        background-position: 98% 50%;
+                        "
+                    />
+                    <label class="form-label"  for="title"  style="margin-left: 0px">
+                        Title includes</label
+                    >
+                    <div class="form-notch">
+                        <div class="form-notch-leading" style="width: 9px"></div>
+                        <div class="form-notch-middle"  style="width: 42.4px" ></div>
+                        <div class="form-notch-trailing"></div>
+                    </div>
+                    </div>
+
+                    <!-- Date range START input -->
+                    <div class="form-outline mb-4">
+                    <input
+                        type="number"
+                        id="startdate"
+                        min="1897"
+                        step="1"
+                        value="1897"
+                        class="form-control"
+                        autocomplete="off"
+                        style="
+                        background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAUBJREFUOBGVVE2ORUAQLvIS4gwzEysHkHgnkMiEc4zEJXCMNwtWTmDh3UGcYoaFhZUFCzFVnu4wIaiE+vvq6+6qTgthGH6O4/jA7x1OiCAIPwj7CoLgSXDxSjEVzAt9k01CBKdWfsFf/2WNuEwc2YqigKZpK9glAlVVwTTNbQJZlnlCkiTAZnF/mePB2biRdhwHdF2HJEmgaRrwPA+qqoI4jle5/8XkXzrCFoHg+/5ICdpm13UTho7Q9/0WnsfwiL/ouHwHrJgQR8WEwVG+oXpMPaDAkdzvd7AsC8qyhCiKJjiRnCKwbRsMw9hcQ5zv9maSBeu6hjRNYRgGFuKaCNwjkjzPoSiK1d1gDDecQobOBwswzabD/D3Np7AHOIrvNpHmPI+Kc2RZBm3bcp8wuwSIot7QQ0PznoR6wYSK0Xb/AGVLcWwc7Ng3AAAAAElFTkSuQmCC');
+                        background-repeat: no-repeat;
+                        background-attachment: scroll;
+                        background-size: 16px 18px;
+                        background-position: 98% 50%;
+                        "
+                    />
+                    <label
+                        class="form-label"
+                        for="startdate"
+                        style="margin-left: 0px"
+                        >Dates from</label
+                    >
+                    <div class="form-notch">
+                        <div class="form-notch-leading" style="width: 9px"></div>
+                        <div
+                        class="form-notch-middle"
+                        style="width: 88.8px"
+                        ></div>
+                        <div class="form-notch-trailing"></div>
+                    </div>
+                    </div>
+
+                    <!-- Date range TO input -->
+                    <div class="form-outline mb-4">
+                        <input
+                            type="number"
+                            id="enddate"
+                            min="1897"
+                            step="1"
+                            value="2022"
+                            class="form-control"
+                            autocomplete="off"
+                            style="
+                            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAUBJREFUOBGVVE2ORUAQLvIS4gwzEysHkHgnkMiEc4zEJXCMNwtWTmDh3UGcYoaFhZUFCzFVnu4wIaiE+vvq6+6qTgthGH6O4/jA7x1OiCAIPwj7CoLgSXDxSjEVzAt9k01CBKdWfsFf/2WNuEwc2YqigKZpK9glAlVVwTTNbQJZlnlCkiTAZnF/mePB2biRdhwHdF2HJEmgaRrwPA+qqoI4jle5/8XkXzrCFoHg+/5ICdpm13UTho7Q9/0WnsfwiL/ouHwHrJgQR8WEwVG+oXpMPaDAkdzvd7AsC8qyhCiKJjiRnCKwbRsMw9hcQ5zv9maSBeu6hjRNYRgGFuKaCNwjkjzPoSiK1d1gDDecQobOBwswzabD/D3Np7AHOIrvNpHmPI+Kc2RZBm3bcp8wuwSIot7QQ0PznoR6wYSK0Xb/AGVLcWwc7Ng3AAAAAElFTkSuQmCC');
+                            background-repeat: no-repeat;
+                            background-attachment: scroll;
+                            background-size: 16px 18px;
+                            background-position: 98% 50%;
+                            "
+                        />
+                        <label
+                            class="form-label"
+                            for="enddate"
+                            style="margin-left: 0px"
+                            >To</label
+                        >
+                        <div class="form-notch">
+                            <div class="form-notch-leading" style="width: 9px"></div>
+                            <div
+                            class="form-notch-middle"
+                            style="width: 88.8px"
+                            ></div>
+                            <div class="form-notch-trailing"></div>
+                        </div>
+                        </div>
+
+                    
+                    <!-- Issue # START input -->
+                    <div class="form-outline mb-4">
+                        <input
+                            type="number"
+                            id="startissue"
+                            min="1"
+                            step="1"
+                            class="form-control"
+                            autocomplete="off"
+                            style="
+                            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAUBJREFUOBGVVE2ORUAQLvIS4gwzEysHkHgnkMiEc4zEJXCMNwtWTmDh3UGcYoaFhZUFCzFVnu4wIaiE+vvq6+6qTgthGH6O4/jA7x1OiCAIPwj7CoLgSXDxSjEVzAt9k01CBKdWfsFf/2WNuEwc2YqigKZpK9glAlVVwTTNbQJZlnlCkiTAZnF/mePB2biRdhwHdF2HJEmgaRrwPA+qqoI4jle5/8XkXzrCFoHg+/5ICdpm13UTho7Q9/0WnsfwiL/ouHwHrJgQR8WEwVG+oXpMPaDAkdzvd7AsC8qyhCiKJjiRnCKwbRsMw9hcQ5zv9maSBeu6hjRNYRgGFuKaCNwjkjzPoSiK1d1gDDecQobOBwswzabD/D3Np7AHOIrvNpHmPI+Kc2RZBm3bcp8wuwSIot7QQ0PznoR6wYSK0Xb/AGVLcWwc7Ng3AAAAAElFTkSuQmCC');
+                            background-repeat: no-repeat;
+                            background-attachment: scroll;
+                            background-size: 16px 18px;
+                            background-position: 98% 50%;
+                            "
+                        />
+                        <label
+                            class="form-label"
+                            for="startissue"
+                            style="margin-left: 0px"
+                            >Issues from</label
+                        >
+                        <div class="form-notch">
+                            <div class="form-notch-leading" style="width: 9px"></div>
+                            <div
+                            class="form-notch-middle"
+                            style="width: 88.8px"
+                            ></div>
+                            <div class="form-notch-trailing"></div>
+                        </div>
+                        </div>
+    
+                        <!-- Date range TO input -->
+                        <div class="form-outline mb-4">
+                            <input
+                                type="number"
+                                id="endissue"
+                                step="1"
+                                class="form-control"
+                                autocomplete="off"
+                                style="
+                                background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAUBJREFUOBGVVE2ORUAQLvIS4gwzEysHkHgnkMiEc4zEJXCMNwtWTmDh3UGcYoaFhZUFCzFVnu4wIaiE+vvq6+6qTgthGH6O4/jA7x1OiCAIPwj7CoLgSXDxSjEVzAt9k01CBKdWfsFf/2WNuEwc2YqigKZpK9glAlVVwTTNbQJZlnlCkiTAZnF/mePB2biRdhwHdF2HJEmgaRrwPA+qqoI4jle5/8XkXzrCFoHg+/5ICdpm13UTho7Q9/0WnsfwiL/ouHwHrJgQR8WEwVG+oXpMPaDAkdzvd7AsC8qyhCiKJjiRnCKwbRsMw9hcQ5zv9maSBeu6hjRNYRgGFuKaCNwjkjzPoSiK1d1gDDecQobOBwswzabD/D3Np7AHOIrvNpHmPI+Kc2RZBm3bcp8wuwSIot7QQ0PznoR6wYSK0Xb/AGVLcWwc7Ng3AAAAAElFTkSuQmCC');
+                                background-repeat: no-repeat;
+                                background-attachment: scroll;
+                                background-size: 16px 18px;
+                                background-position: 98% 50%;
+                                "
+                            />
+                            <label
+                                class="form-label"
+                                for="endissue"
+                                style="margin-left: 0px"
+                                >To</label
+                            >
+                            <div class="form-notch">
+                                <div class="form-notch-leading" style="width: 9px"></div>
+                                <div
+                                class="form-notch-middle"
+                                style="width: 88.8px"
+                                ></div>
+                                <div class="form-notch-trailing"></div>
+                            </div>
+                            </div>
+
+
+                    <!-- form select for pedigree -->
+                    <select class="form-select" id="pedigree-select" aria-label="Default select example">
+                        <option selected>Pedigree</option>
+                        <option value="allentown">Allentown</option>
+                        <option value="Aurora">Aurora</option>
+                        <option value="Bethlehem">Bethlehem</option>
+                        <option value="More to come...">More to come...</option>
+                      </select>
+                      
+                    <!-- Checkbox -->
+                    <!-- <div class="form-check d-flex justify-content-center mb-4">
+                    <input
+                        class="form-check-input me-2"
+                        type="checkbox"
+                        value=""
+                        id="form4Example4"
+                        checked=""
+                    />
+                    <label class="form-check-label" for="form4Example4">
+                        Send me a copy of this message
+                    </label>
+                    </div> -->
+
+                    <!-- Submit button -->
+                    <button type="submit" class="btn btn-primary btn-block mt-4 mb-4">
+                    Search
+                    </button>
+                </form>
+            </section>
+            <!-- End search box -->
+        </div>
+        <div class="col-md-10">
+            <!-- Search output with pagination -->
+            <section>
+                <table class="table table-striped mb-5">
+                    <thead>
+                      <tr class="clickable-table-row" data-href="/comicdetail">
+                        <th scope="col">#</th>
+                        <th scope="col">Image</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Issue #</th>
+                        <th scope="col">year</th>
+                        <th scope="col">Grade</th>
+                        <th scope="col">Pedigree</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="clickable-table-row" data-href="/comicdetail">
+                        <th scope="row"  data-comic-id="1357">1</th>
+                        <td class="table-image"><img src="../static/images/batman-p-250.jpg"></img></td>
+                        <td>Batman</td>
+                        <td>101</td>
+                        <td>1975</td>
+                        <td>9.0</td>
+                        <td>Bowling Green</td>
+                      </tr>
+                      <tr class="clickable-table-row" data-href="/comicdetail">
+                        <th scope="row"  data-comic-id="2468">2</th>
+                        <td class="table-image"><img src="../static/images/captain_america-p-250.jpg"></img></td>
+                        <td>Captain America</td>
+                        <td>37</td>
+                        <td>1974</td>
+                        <td>8.9</td>
+                        <td>Boston</td>
+                      </tr>
+                    </tbody>
+                </table>
+
+                <!-- End search output -->
+
+                <!-- pagination -->
+                <div class="row">
+                    <div
+                      class="col-lg-4 col-md-12 mb-4 d-flex justify-content-center"
+                    >
+                      <nav aria-label="...">
+                        <ul class="pagination">
+                          <li class="page-item disabled">
+                            <a
+                              class="page-link"
+                              href="#"
+                              tabindex="-1"
+                              aria-disabled="true"
+                              >Previous</a
+                            >
+                          </li>
+                          <li class="page-item">
+                            <a class="page-link" href="#">1</a>
+                          </li>
+                          <li class="page-item active" aria-current="page">
+                            <a class="page-link" href="#"
+                              >2 <span class="visually-hidden">(current)</span></a
+                            >
+                          </li>
+                          <li class="page-item">
+                            <a class="page-link" href="#">3</a>
+                          </li>
+                          <li class="page-item">
+                            <a class="page-link" href="#">Next</a>
+                          </li>
+                        </ul>
+                      </nav>
+                    </div>
+      
+                    <div class="col-lg-4 col-md-6 mb-4 d-flex justify-content-center">
+                      <nav aria-label="...">
+                        <ul class="pagination pagination-circle">
+                          <li class="page-item">
+                            <a
+                              class="page-link"
+                              href="#"
+                              tabindex="-1"
+                              aria-disabled="true"
+                              >Previous</a
+                            >
+                          </li>
+                          <li class="page-item">
+                            <a class="page-link" href="#">1</a>
+                          </li>
+                          <li class="page-item active" aria-current="page">
+                            <a class="page-link" href="#"
+                              >2 <span class="visually-hidden">(current)</span></a
+                            >
+                          </li>
+                          <li class="page-item">
+                            <a class="page-link" href="#">3</a>
+                          </li>
+                          <li class="page-item">
+                            <a class="page-link" href="#">Next</a>
+                          </li>
+                        </ul>
+                      </nav>
+                    </div>
+      
+                    <div class="col-lg-4 col-md-6 mb-4 d-flex justify-content-center">
+                      <nav aria-label="Page navigation example">
+                        <ul class="pagination">
+                          <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Previous">
+                              <span aria-hidden="true">«</span>
+                            </a>
+                          </li>
+                          <li class="page-item">
+                            <a class="page-link" href="#">1</a>
+                          </li>
+                          <li class="page-item">
+                            <a class="page-link" href="#">2</a>
+                          </li>
+                          <li class="page-item">
+                            <a class="page-link" href="#">3</a>
+                          </li>
+                          <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Next">
+                              <span aria-hidden="true">»</span>
+                            </a>
+                          </li>
+                        </ul>
+                      </nav>
+                    </div>
+                  </div>
+                <!-- end pagination -->
+                
+            </section>
+
+
+            <!-- SCRIPT TO MAKE WHOLE TABLE ROW CLICKABLE -->
+            <script>
+                $('tr[data-href]').on("click", function() {
+                    document.location = $(this).data('href');
+                });
+            </script>
+        </div>
+    </div>
 
    <br><br>
     

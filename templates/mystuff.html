@@ -17,8 +17,9 @@
 
 
 
-    <h1>MY Stuff</h1>
-    <h2>My Trades</h2>
+    <h1>MY STUFF</h1>
+    <p><a href="#trades">My Trades</a> | <a href="#collection">My Collection</a> | <a href="#watchlist">My Watchlist</a></p>
+    <h2 id="trades">My Trades</h2>
 
     <table class="table table-striped mb-5">
         <thead>
@@ -69,7 +70,7 @@
       </table>
 
 
-    <h2>My Comic Collection</h2>
+    <h2 id="collection">My Comic Collection</h2>
     <table class="table table-striped mb-5">
         <thead>
           <tr class="clickable-table-row" data-href="/comicdetail">
@@ -102,7 +103,7 @@
             <td>Boston</td>
           </tr>
         </tbody>
-      </table>
+    </table>
 
       <!-- SCRIPT TO MAKE WHOLE TABLE ROW CLICKABLE -->
       <script>
@@ -111,7 +112,35 @@
         });
     </script>
     
-  
+    <h2 id="watchlist">My Watch List</h2>
+    <table class="table table-striped mb-5">
+        <thead>
+          <tr class="clickable-table-row" data-href="/comicdetail">
+            <th scope="col">#</th>
+            <th scope="col">Title Contains</th>
+            <th scope="col">Issue from</th>
+            <th scope="col">Issue to</th>
+            <th scope="col">Dates from</th>
+            <th scope="col">Dates to</th>
+            <th scope="col">Grade min</th>
+            <th scope="col">Pedigree</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="clickable-table-row" data-href="/comicdetail">
+            <th scope="row"  data-comic-id="1357">1</th>
+            <td class="table-image"><img src="../static/images/batman-p-250.jpg"></img></td>
+            <td>Watchman</td>
+            <td>1</td>
+            <td>100</td>
+            <td>1970</td>
+            <td>1975</td>
+            <td>9.0</td>
+            <td>Bowling Green</td>
+          </tr>
+          
+        </tbody>
+      </table>
 
 
 
