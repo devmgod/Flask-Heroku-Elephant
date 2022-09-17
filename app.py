@@ -112,13 +112,6 @@ def about():
  
     return render_template("about.html")
 
-@app.route('/messages', methods=["GET"])
-def messages():
-    """ messages page - should have full CRUD internal messaging capability"""
-
- 
-    return render_template("messages.html")
-
 @app.route('/mystuff', methods=["GET"])
 def mystuff():
     """ My Stuff page - should have link to user's library of trade offerings, list of offers made, offers received, things being shipped, books that they are watching for..."""
@@ -143,11 +136,11 @@ def search():
 
 ###############################  MAIL ROUTES #################################
 
-@app.route('/inbox', methods=["GET"])
+@app.route('/messages', methods=["GET"])
 def inbox():
-    """ inbox page - should show all messages recieved from members with pagination"""
+    """ inbox page - should show all messages recieved from members with a mail search box and pagination"""
  
-    return render_template("inbox.html")
+    return render_template("messages.html")
 
 
 @app.route('/sent', methods=["GET"])
