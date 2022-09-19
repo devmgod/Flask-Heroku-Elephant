@@ -2,4 +2,5 @@
 - financial API/SHOPPING CART?
 - Security sign-in/out
 - devops it to heroku/netlify
-- 
+- messages/websockets?
+- e-mail confirmation/security?
