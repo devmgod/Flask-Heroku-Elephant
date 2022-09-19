@@ -25,6 +25,9 @@
               <th scope="col">Date</th>
             <th scope="col">From</th>
             <th scope="col">Message</th>
+            <th>Read</th>
+            <th>Reply</th>
+            <th>Delete</th>
           </tr>
         </thead>
         <tbody>
@@ -32,7 +35,11 @@
             <th scope="row"  data-msg-id="1357">2/3/22</th>
             <td>RedLeader12</td>
             <td>I am interested in trading your Iron man #53 for my Spiderman #12.  Please contact me by...</td>
+            <td><i class="fa-solid fa-magnifying-glass"></i></td>
+            <td><i class="fa fa-envelope"></i></td>
+            <td><i class="fa-solid fa-trash"></i></td>
           </tr>
+
           <tr class="clickable-table-row" data-href="/maildetail">
             <th scope="row"  data-msg-id="1357">5/13/22</th>
             <td>Loki123</td>
@@ -40,10 +47,20 @@
           </tr>
         </tbody>
       </table>
+
+
+      <div class="row mb-4">
+        <div class="col">
+            <button type="button" class="btn btn-primary" onclick="location.href='/newmail'">
+                New Message
+              </button>
+        </div>
+    </div>
+
       <!-- pagination -->
       <div class="row">
         <div
-          class="col-lg-4 col-md-12 mb-4 d-flex justify-content-center"
+          class="col-12 mb-4 d-flex justify-content-center"
         >
           <nav aria-label="...">
             <ul class="pagination">
@@ -78,13 +95,15 @@
 
       </div>
     <!-- end pagination -->
+
+
     
       <!-- SCRIPT TO MAKE WHOLE TABLE ROW CLICKABLE -->
-      <script>
+      <!-- <script>
         $('tr[data-href]').on("click", function() {
             document.location = $(this).data('href');
         });
-    </script>
+    </script> -->
 
 
 
