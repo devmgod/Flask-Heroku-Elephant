@@ -12,7 +12,6 @@
   - Connect glider to database to autopopulate 
   - Maybe do a canva hero layout up top (filtered covers? Superhero logos?)
   - Carousel (index.html):
-    - clean up carousel (remove shadows? check glider.js docs)  
     - Do dom manip to add pics from Strapi automatically and include link to comic details/sales/trade page
 
 - Create signup list from e-mail form above + strapi
