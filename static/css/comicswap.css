@@ -176,3 +176,11 @@ h3 {
   background-color: black;
   color: white;
 }
+
+#cartoon_girl {
+  position: absolute;
+  left: 0px;
+  top: -125px;
+  width: 300px;
+  height: auto;
+}
