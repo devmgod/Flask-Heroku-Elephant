@@ -5,26 +5,58 @@
 
 
 
-{% block links %}
+{% block hero %}
 
 
+  <!-- <img src="../static/images/montage2.jpg" alt=""> -->
+
+  <section class="border p-4 text-center mb-4">
+    <header>
+
+      <!-- Background image -->
+      <div
+        class="p-5 text-center bg-image"
+        style="
+          background-image: url('../static/images/montage3.jpg');
+          height: 400px;
+        "
+      >
+        <div
+          class="mask"
+          style="background-color: rgba(57, 192, 237, 0.8)"
+        >
+          <div
+            class="d-flex justify-content-center align-items-center h-100"
+          >
+            <div class="text-white">
+              <h1 class="mb-3">The Comic Swap</h1>
+              <h4 class="mb-3">Your Safe Place to Trade</h4>
+              <a
+                class="btn btn-outline-light btn-lg"
+                href="#!"
+                role="button"
+                >Join our Mailing List</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Background image -->
+    </header>
+  </section>
 
 {% endblock %}
 
 
-
 {% block content %}
 
-<img src="../static/images/dc_montage.jpg" alt="">
-
-<h1>YOUR SAFE PLACE TO TRADE</h1>
 
 
     <div class="centered">
 
       <h2>Featured Collectables</h2>
-      <P>Comics for trade or sale</P>
-      <button type="button" style="margin-bottom: 60px;" class="btn btn-primary btn-rounded" onclick="location.href='/search'">
+      <h4>Comics currently for trade or sale</h4>
+      <button type="button" style="margin-bottom: 60px;" class="btn btn-primary btn-rounded mt-2" onclick="location.href='/search'">
         View All Collectables
       </button>
    
