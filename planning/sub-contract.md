@@ -1,6 +1,22 @@
 - Strapi CRUD methods
-- financial API/SHOPPING CART?
-- Security sign-in/out
+  - contracted to Shashank S. on Freelancer.com for $150
+  - took away from Mohamed S.
+  - 
 - devops it to heroku/netlify
+  - contracted to Shashank S. on Freelancer.com for $150
+  - Deploy an app to heroku built from Python, Flask and strapi (strapi uses an elephantsql api) and ensure it works correctly, security is properly set up and can be updated properly with a git push.
+
+- financial API/SHOPPING CART?
+  - When trade is accepted or offered:
+    - checks to make sure credit card is on file. 
+    - If 
+      - not - get the information
+        - keep on file?
+          - true: store it
+          - false: store in a session and delete session when transaction finishes or times out after an hour
+      - true 
+        - informs that it will be automatically charged when the offer is accepted. 
+        - Automatically fills in/charges a certain amount based on the comic value
+- Security sign-in/out
 - messages/websockets?
 - e-mail confirmation/security?

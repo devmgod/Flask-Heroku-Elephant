@@ -13,6 +13,8 @@
   - Maybe do a canva hero layout up top (filtered covers? Superhero logos?)
   - Carousel (index.html):
     - Do dom manip to add pics from Strapi automatically and include link to comic details/sales/trade page
+  - Get better title font
+  - Get better version of or delete cartoon-girl
 
 - Create signup list from e-mail form above + strapi
 - 
