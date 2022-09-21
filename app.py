@@ -182,5 +182,11 @@ def deletemsg():
  
     return render_template("deletemsg.html")
 
+@app.route('/subscribe', methods=["GET"])
+def subscribe():
+    """ write an email page - should show form to create an e-mail and send"""
+ 
+    return render_template("subscribe.html")
+
 
 
