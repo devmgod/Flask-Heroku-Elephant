@@ -84,6 +84,7 @@ def home():
     return render_template("index.html")
 
 
+################################### LOGIN/REGISTER ####################################
 
 @app.route('/login', methods=["GET"])
 def login():
@@ -98,19 +99,23 @@ def register():
  
     return render_template("register.html")
 
+
+################################################################################
+
 @app.route('/myaccount', methods=["GET"])
 def myaccount():
     """ My Account page - should have CRUD functionality for personal info, preferences, credit card on file, etc...."""
 
- 
     return render_template("myaccount.html")
+
 
 @app.route('/about', methods=["GET"])
 def about():
     """ about page - should tell about company and benefits"""
 
- 
     return render_template("about.html")
+
+
 
 @app.route('/mystuff', methods=["GET"])
 def mystuff():
@@ -119,11 +124,13 @@ def mystuff():
     return render_template("mystuff.html")
 
 
+
 @app.route('/comicdetail', methods=["GET"])
 def comicdetail():
     """ Comic Detail page - should have links to a specific user's comic with all details and option to edit it"""
 
     return render_template("comic-detail.html")
+
 
 
 @app.route('/search', methods=["GET"])
@@ -182,11 +189,46 @@ def deletemsg():
  
     return render_template("deletemsg.html")
 
+
+########################### MAILING LIST ###########################################
+
 @app.route('/subscribe', methods=["GET"])
 def subscribe():
     """ write an email page - should show form to create an e-mail and send"""
  
     return render_template("subscribe.html")
 
+########################### TRADING ###########################################
+
+@app.route('/offertrade', methods=["GET"])
+def offertrade():
+    """ processes the request for a trade.  Should:
+    - send a message to book owner asking for it and the terms including additional money if app.
+    - Shows message saying "this constitutes a binding contract and if the trade is canceled by either party the fee will still be owed (?)
+    """
+ 
+    return render_template("offertrade.html")
+
+@app.route('/acceptoffer', methods=["GET"])
+def acceptoffer():
+    """ processes the acceptance of a trade offer.  Should:
+    - acknowledge the trade onscreen
+    - inform offerrer
+    - charge offerrer's card
+    - send information via message and email to offerrer and accepter on how to mail items
+    - update status of that comic and trade so it shows trade status in my stuff
+    """
+
+    return render_template("acceptoffer.html")
 
 
+# TODO: FINISH THIS ONE...
+@app.route('/updateTradeStatus', methods=["GET"])
+def updateTradeStatus():
+    """ 
+    - get here from my stuff trades list and/or trade detail page on a comic
+    - offer ability to change it to accepted/not mailed, mailed/en route to TheComicSwap, received by TheComicSwap/being inspected, inspection approved/not mailed, inspected/passed/en route to reciver, received by reciever/$ not released, transaction successful/$ released
+    
+    """
+ 
+    return render_template("updateTradeStatus.html")
