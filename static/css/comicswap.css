@@ -172,6 +172,11 @@ h3 {
   cursor: pointer;
 }
 
+.fa-trash {
+  cursor: pointer;
+  color: #1266f1;
+}
+
 #pedigree-select {
   background-color: black;
   color: white;
