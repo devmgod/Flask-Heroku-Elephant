@@ -170,5 +170,11 @@ def newmail():
  
     return render_template("newmail.html")
 
+@app.route('/deletemsg', methods=["GET"])
+def deletemsg():
+    """ write an email page - should show form to create an e-mail and send"""
+ 
+    return render_template("deletemsg.html")
+
 
 
