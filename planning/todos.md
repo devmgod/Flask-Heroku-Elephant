@@ -16,5 +16,11 @@
   - Get better title font
   - Get better version of or delete cartoon-girl
 
+newmail.html
+- create mail message in receiver db
+- update new mail flag in receiver db
+- check for new mail/set tag in nav bar if true
+- Send "mail sent" success alert & return to mail list or previous message
+
 - Create signup list from e-mail form above + strapi
 - 

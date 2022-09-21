@@ -143,6 +143,12 @@ def inbox():
     return render_template("messages.html")
 
 
+@app.route('/msgsent', methods=["GET"])
+def msgsent():
+    """ alerts that a  messages was sent from user """
+ 
+    return render_template("msgsent.html")
+
 @app.route('/sent', methods=["GET"])
 def sent():
     """ sent comicswap mail page - should show a list of all messages sent from user with pagination and clickable to maildetail and have a reply and delete button"""
