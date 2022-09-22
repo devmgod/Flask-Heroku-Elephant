@@ -223,12 +223,13 @@ def acceptoffer():
 
 
 # TODO: FINISH THIS ONE...
-@app.route('/updateTradeStatus', methods=["GET"])
-def updateTradeStatus():
+@app.route('/markedasmailed', methods=["GET"])
+def markedasmailed():
     """ 
+    - possibly change this to an update tradestatus() function and pass in the marked as mailed
     - get here from my stuff trades list and/or trade detail page on a comic
     - offer ability to change it to accepted/not mailed, mailed/en route to TheComicSwap, received by TheComicSwap/being inspected, inspection approved/not mailed, inspected/passed/en route to reciver, received by reciever/$ not released, transaction successful/$ released
     
     """
  
-    return render_template("updateTradeStatus.html")
+    return render_template("markedasmailed.html")
