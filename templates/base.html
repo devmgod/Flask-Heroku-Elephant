@@ -159,12 +159,38 @@
         </div>
       </div>
     </nav>
-
     <br />
     
   </section>
   <!--Section: Navbars-->
+  <!-- FLASH -->
   
+  {% for msg in get_flashed_messages() %}
+  <div class="d-flex justify-content-center">
+    <!-- Success toast -->
+    <div
+      class="toast fade show bg-success text-white"
+      role="alert"
+      aria-live="assertive"
+      aria-atomic="true"
+    >
+      <div class="toast-header bg-success text-white">
+        <h2 class="me-auto">{{ msg }}</h2>
+        <button
+          type="button"
+          class="btn-close btn-close-white"
+          data-mdb-dismiss="toast"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="toast-body">
+        
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+
+  <!-- endflash -->
   
   {% block hero %}
   

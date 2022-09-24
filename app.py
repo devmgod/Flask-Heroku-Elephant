@@ -12,10 +12,13 @@ import socket
 import pdb
 # from date_and_time_functions import *
 
-from StrapiCRUD import Articles    
+from CRUD_psql import * 
+
+
+
 
 #TODO: TEMPORARY - ***** move these to environment variables and put in heroku *****
-# from secrets import API_SECRET_KEY
+from secrets import API_SECRET_KEY
 
 # ****NEED TO ALSO INSTALL Flask-Reloaded in requirements TO FIX BUGS IN flask_uploads!!!
 
@@ -23,6 +26,8 @@ from StrapiCRUD import Articles
 # from forms import User_registration, User_login, Admin_registration, Admin_login
 
 app=Flask(__name__)
+
+app.config['SECRET_KEY'] = API_SECRET_KEY
 
 # original local postgresql db
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql:///remembertogether'
@@ -52,7 +57,7 @@ app.config['DEBUG_TB_INTERCEPT_REDIRECTS'] = False
 # app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 # debug = DebugToolbarExtension(app)
 
-# WTF_CSRF_SECRET_KEY = 'magic'
+WTF_CSRF_SECRET_KEY = 'magic'
 
 
 
@@ -150,11 +155,20 @@ def inbox():
     return render_template("messages.html")
 
 
-@app.route('/msgsent', methods=["GET"])
+@app.route('/msgsent')
 def msgsent():
-    """ alerts that a  messages was sent from user """
+    """ alerts that a  messages was sent from user 
+    TODO: create message and send alert to receiver
+    """
+
+
+    message = Message(3, " Bob Ross", "this is a test msg", "this is a message just a message of some size to try things out", "attachment details", False)
+
+    flash(f'{message.user} was created!')
+
  
-    return render_template("msgsent.html")
+    return redirect("/messages")
+
 
 @app.route('/sent', methods=["GET"])
 def sent():
