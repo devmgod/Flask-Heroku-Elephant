@@ -155,11 +155,19 @@ def search():
 @app.route('/messages', methods=["GET"])
 def inbox():
     """ inbox page - should show all messages recieved from members with a mail search box and pagination"""
-    #query all messages
-    messages = Msg.query.all()
+
+    #TODO: TEMPORARY - UPDATE WITH USER FROM LOGIN
+    session['current_user']=1
+    current_user = session['current_user']
+
+    #query all of this user's messages
+    messages = Msg.query.filter(Msg.to_id == current_user)
+    # senders = User.query.join(Msg).filter(Msg.to_id == current_user)
+    # print(senders)
+    senders = User.query.all()
 
     #send to the template as variable
-    return render_template("messages.html", messages=messages)
+    return render_template("messages.html", messages=messages, senders=senders)
 
 
 @app.route('/msgsent')

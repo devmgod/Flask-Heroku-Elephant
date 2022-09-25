@@ -47,11 +47,14 @@ Msg.query.delete()
 # Add messages
 msg1 = Msg(to_id=1, from_id=2, subject="first db test of msgs", content="this would be a great place for some lorem ipsum.  But I'll just type up some random content instead.  Okay, that should be enough.", read=False, attachments="{'http://www.test.com', 'http://www.test2.com'}")
 
-msg2 = Msg(to_id=0, from_id=2, subject="2nd db test of msgs", content="MORE TEXT!!!  this would be a great place for some lorem ipsum.  But I'll just type up some random content instead.  Okay, that should be enough.", read=False, attachments="{'http://www.test.com', 'http://www.test2.com'}")
+msg2 = Msg(to_id=2, from_id=1, subject="NOT FOR USER #1 - 2nd db test of msgs", content="MORE TEXT!!!  this would be a great place for some lorem ipsum.  But I'll just type up some random content instead.  Okay, that should be enough.", read=False, attachments="{'http://www.test.com', 'http://www.test2.com'}")
+
+msg3 = Msg(to_id=1, from_id=2, subject="2nd msg for user 1", content="this would be a great place for some lorem ipsum.  But I'll just type up some random content instead.  Okay, that should be enough.", read=False, attachments="{'http://www.test.com', 'http://www.test2.com'}")
 
 # Add new messages to session, so they'll persist
 db.session.add(msg1)
 db.session.add(msg2)
+db.session.add(msg3)
 
 
 

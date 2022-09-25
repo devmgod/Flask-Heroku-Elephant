@@ -86,7 +86,10 @@ class Msg(db.Model):
     nullable = False)
 
     from_id = db.Column(db.Integer,
+    db.ForeignKey('users.id'),
     nullable = False)
+
+    sender = db.relationship('User')
 
     subject = db.Column(db.String(50),
     nullable=False)
