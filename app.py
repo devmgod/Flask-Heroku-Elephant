@@ -15,7 +15,7 @@ import pdb
 # from CRUD_psql import * 
 
 #TODO: TEMPORARY - ***** move these to environment variables and put in heroku *****
-from secrets import API_SECRET_KEY
+from my_secrets import API_SECRET_KEY
 
 # ****NEED TO ALSO INSTALL Flask-Reloaded in requirements TO FIX BUGS IN flask_uploads!!!
 
