@@ -4,7 +4,7 @@ from flask import Flask, request, render_template, redirect, flash, session, jso
 # from flask_uploads import configure_uploads, IMAGES, UploadSet
 # from forms import User_registration, Create_memorial_form, Post_form, LoginForm, ZipForm, AddFlowerToCart, FlowerOrderForm
 import json 
-from models import db, connect_db, Msg
+from models import db, connect_db, Msg, User
 from os import getenv
 # import requests, base64
 # import socket
@@ -12,7 +12,7 @@ from os import getenv
 import pdb
 # from date_and_time_functions import *
 
-from CRUD_psql import * 
+# from CRUD_psql import * 
 
 #TODO: TEMPORARY - ***** move these to environment variables and put in heroku *****
 from secrets import API_SECRET_KEY
@@ -165,10 +165,10 @@ def msgsent():
     TODO: create message and send alert to receiver
     """
 
-    msg = Message()
-    message = msg.create(3, " Bob Ross", "this is a test msg", "this is a message just a message of some size to try things out", "attachment details", False)
+    # msg = Message()
+    # message = msg.create(3, " Bob Ross", "this is a test msg", "this is a message just a message of some size to try things out", "attachment details", False)
 
-    flash(f'{message["to"]} was created!')
+    flash(f'WHERE WE CREATE A NEW MSG THROUGH SQLAlchemy!')
 
  
     return redirect("/messages")

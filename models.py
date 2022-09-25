@@ -8,7 +8,65 @@ def connect_db(app):
     db.app = app 
     db.init_app(app)
 
-#MODELS GO BELOW
+#MODELS 
+
+############################# USERS ######################################
+
+class User(db.Model):
+
+    __tablename__ =  "users"
+
+    id = db.Column(db.Integer,
+    primary_key = True,
+    autoincrement = True)
+
+    username = db.Column(db.String(50),
+    nullable=False,
+    unique=True)
+
+    fname = db.Column(db.String(50),
+    nullable = False)
+
+    lname = db.Column(db.String(50),
+    nullable = False)
+
+    email = db.Column(db.String(50),
+    unique=True,
+    nullable = False)
+
+    confirmation_token = db.Column(db.String(50))
+
+    confirmed = db.Column(db.Boolean, 
+    default=False)
+
+    blocked = db.Column(db.Boolean, 
+    default=False)
+
+    #TODO: relate to roles table
+    role = db.Column(db.Integer,
+    nullable=False
+    )
+
+    @classmethod
+    def get_all_users(cls):
+        return cls.query.all()
+
+    def __repr__(self):
+            p = self
+            return f"<User id={p.id} username={p.username} fname={p.fname} lname={p.lname} email={p.email} read={p.read} attachments={p.attachments}>"
+
+############################# ROLES ######################################
+
+############################# COMICS ######################################
+
+############################# DEALS ######################################
+
+############################# OFFERS ######################################
+
+
+
+
+############################# MESSAGES ######################################
 class Msg(db.Model):
 
     __tablename__ =  "messages"
@@ -41,3 +99,7 @@ class Msg(db.Model):
     def __repr__(self):
             p = self
             return f"<Message id={p.id} to_id={p.to_id} from_id={p.from_id} subject={p.subject} content={p.content} read={p.read} attachments={p.attachments}>"
+
+############################# PEDIGREES ######################################
+
+############################# ARTICLES ######################################
