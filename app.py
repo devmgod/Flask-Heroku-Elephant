@@ -4,18 +4,15 @@ from flask import Flask, request, render_template, redirect, flash, session, jso
 # from flask_uploads import configure_uploads, IMAGES, UploadSet
 # from forms import User_registration, Create_memorial_form, Post_form, LoginForm, ZipForm, AddFlowerToCart, FlowerOrderForm
 import json 
-# from models import db, connect_db, User, Admin_user, Departed, Post, Order, Order_item
+from models import db, connect_db, Msg
 from os import getenv
-import requests, base64
-import socket
+# import requests, base64
+# import socket
 # from flowershop import *
 import pdb
 # from date_and_time_functions import *
 
 from CRUD_psql import * 
-
-
-
 
 #TODO: TEMPORARY - ***** move these to environment variables and put in heroku *****
 from secrets import API_SECRET_KEY
@@ -27,10 +24,9 @@ from secrets import API_SECRET_KEY
 
 app=Flask(__name__)
 
-app.config['SECRET_KEY'] = API_SECRET_KEY
 
 # original local postgresql db
-# app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql:///remembertogether'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql:///comicswap2'
 
 #secure variables
 #At ElephantSQL
@@ -47,7 +43,15 @@ app.config['SECRET_KEY'] = API_SECRET_KEY
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_ECHO'] = True
 
+app.config['SECRET_KEY'] = API_SECRET_KEY
+
 app.config['DEBUG_TB_INTERCEPT_REDIRECTS'] = False
+
+# debug = DebugToolbarExtension(app)
+
+connect_db(app)
+
+
 # app.config['UPLOADED_IMAGES_DEST'] = 'static/images'
 
 # images = UploadSet('images', IMAGES)
@@ -55,7 +59,7 @@ app.config['DEBUG_TB_INTERCEPT_REDIRECTS'] = False
 
 
 # app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-# debug = DebugToolbarExtension(app)
+
 
 WTF_CSRF_SECRET_KEY = 'magic'
 
@@ -160,7 +164,6 @@ def msgsent():
     """ alerts that a  messages was sent from user 
     TODO: create message and send alert to receiver
     """
-
 
     msg = Message()
     message = msg.create(3, " Bob Ross", "this is a test msg", "this is a message just a message of some size to try things out", "attachment details", False)
