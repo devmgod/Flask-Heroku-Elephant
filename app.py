@@ -157,7 +157,7 @@ def inbox():
     """ inbox page - should show all messages recieved from members with a mail search box and pagination"""
 
     #TODO: TEMPORARY - UPDATE WITH USER FROM LOGIN
-    session['current_user']=1
+    session['current_user']=2
     current_user = session['current_user']
 
     #query all of this user's messages
@@ -170,19 +170,37 @@ def inbox():
     return render_template("messages.html", messages=messages, senders=senders)
 
 
-@app.route('/msgsent')
+@app.route('/msgsent', methods=["POST"])
 def msgsent():
-    """ alerts that a  messages was sent from user 
-    TODO: create message and send alert to receiver
+    """ 
+    gathers POST data (to_id, mailto, subject, message )
+    creates object and writes it to db
+    TODO: error handling
+    alerts the TO person that a  messages was sent from user 
+    create message and send alert to receiver
     """
 
+    current_user=session['current_user']
+
+    #gather POST data
+    to_id = request.form["to_id"]
+    mailto = request.form["mailto"]
+    subject = request.form["subject"]
+    message = request.form["message"]
+    read=False
+    attachments=""
     # msg = Message()
     # message = msg.create(3, " Bob Ross", "this is a test msg", "this is a message just a message of some size to try things out", "attachment details", False)
 
-    flash(f'WHERE WE CREATE A NEW MSG THROUGH SQLAlchemy!')
+    new_msg = Msg(to_id=to_id, from_id=current_user, subject=subject, content=message, read=read, attachments=attachments)
 
- 
-    return redirect("/messages")
+
+    db.session.add(new_msg)
+    db.session.commit()
+
+    flash(f'Message mailed successfully to {mailto}')
+
+    return redirect("/messages")  
 
 
 @app.route('/sent', methods=["GET"])
