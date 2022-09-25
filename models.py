@@ -1,5 +1,6 @@
 from uuid import UUID
 from flask_sqlalchemy import SQLAlchemy
+from datetime import datetime
 
 
 db=SQLAlchemy()
@@ -42,6 +43,9 @@ class User(db.Model):
     blocked = db.Column(db.Boolean, 
     default=False)
 
+    mailinglist = db.Column(db.Boolean,
+    default=False)
+
     #TODO: relate to roles table
     role = db.Column(db.Integer,
     nullable=False
@@ -74,6 +78,9 @@ class Msg(db.Model):
     id = db.Column(db.Integer,
     primary_key = True,
     autoincrement = True)
+
+    maildate = db.Column(db.DateTime, nullable=False,
+    default=datetime.utcnow)
 
     to_id = db.Column(db.Integer,
     nullable = False)

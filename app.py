@@ -93,7 +93,7 @@ def home():
     return render_template("index.html")
 
 
-################################### LOGIN/REGISTER ####################################
+############################# LOGIN/REGISTER ################################
 
 @app.route('/login', methods=["GET"])
 def login():
@@ -155,8 +155,11 @@ def search():
 @app.route('/messages', methods=["GET"])
 def inbox():
     """ inbox page - should show all messages recieved from members with a mail search box and pagination"""
- 
-    return render_template("messages.html")
+    #query all messages
+    messages = Msg.query.all()
+
+    #send to the template as variable
+    return render_template("messages.html", messages=messages)
 
 
 @app.route('/msgsent')
@@ -208,7 +211,7 @@ def deletemsg():
     return render_template("deletemsg.html")
 
 
-########################### MAILING LIST ###########################################
+######################### MAILING LIST ####################################
 
 @app.route('/subscribe', methods=["GET"])
 def subscribe():
@@ -216,7 +219,7 @@ def subscribe():
  
     return render_template("subscribe.html")
 
-########################### TRADING ###########################################
+########################### TRADING #########################################
 
 @app.route('/offertrade', methods=["GET"])
 def offertrade():

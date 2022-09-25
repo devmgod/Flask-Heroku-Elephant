@@ -20,7 +20,8 @@ usr1 = User(
     confirmation_token="OU812",
     confirmed=False,
     blocked=False,
-    role=0
+    role=0,
+    mailinglist=True
     )
 
 usr2 = User(
@@ -31,7 +32,8 @@ usr2 = User(
     confirmation_token="ASDF1234",
     confirmed=False,
     blocked=False,
-    role=1
+    role=1,
+    mailinglist=True
     )
 
 # Add new users to session, so they'll persist
