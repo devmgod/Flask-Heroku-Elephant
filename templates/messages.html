@@ -28,10 +28,10 @@
         <tbody>
           <tr class="" data-href="/maildetail">
             <th scope="row"  data-msg-id={{ message.id }}>{{ message.maildate}}</th>
-            <td>{{ message.sender.fname }} {{ message.sender.lname }</td>
+            <td>{{ message.sender.fname }} {{ message.sender.lname }}</td>
             <td>{{ message.subject }}</td>
             <td><a href="/maildetail"><i class="fa fa-eye"></i></a></td>
-            <td><a href="/newmail"><i class="fa fa-envelope"></i></a></td>
+            <td><a href="/reply/{{ message.from_id}}"><i class="fa fa-envelope"></i></a></td>
             <td>
               <i class="fa fa-trash" data-mdb-toggle="modal"
               data-mdb-target="#exampleModal"></i> 
@@ -39,15 +39,6 @@
           </tr>
           {% endfor %}
 
-          <tr class="" data-href="/maildetail">
-            <th scope="row"  data-msg-id="1357">5/13/22</th>
-            <td>Loki123</td>
-            <td>I am interested in trading your Batman #10 for my Superman #501 plus $250.</td>
-            <td><a href="/maildetail"><i class="fa fa-eye"></i></a></td>
-            <td><a href="/newmail"><i class="fa fa-envelope"></i></a></td>
-            <td><i class="fa fa-trash" data-mdb-toggle="modal"
-              data-mdb-target="#exampleModal"></i> </td>
-          </tr>
         </tbody>
       </table>
 

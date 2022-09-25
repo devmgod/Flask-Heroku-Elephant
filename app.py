@@ -206,11 +206,19 @@ def maildetail():
     return render_template("maildetail.html")
 
 
-@app.route('/newmail', methods=["GET"])
+@app.route('/newmail')
 def newmail():
     """ write an email page - should show form to create an e-mail and send"""
  
     return render_template("newmail.html")
+
+@app.route('/reply/<int:fromid>')
+def reply(fromid):
+    """ display an email page with reply to person's e-mail already in place - should show form to create an e-mail and send"""
+
+    replyto = User.query.get_or_404(fromid)
+ 
+    return render_template("reply.html", replyto=replyto)
 
 @app.route('/deletemsg', methods=["GET"])
 def deletemsg():
