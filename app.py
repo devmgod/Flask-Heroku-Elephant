@@ -162,9 +162,10 @@ def msgsent():
     """
 
 
-    message = Message(3, " Bob Ross", "this is a test msg", "this is a message just a message of some size to try things out", "attachment details", False)
+    msg = Message()
+    message = msg.create(3, " Bob Ross", "this is a test msg", "this is a message just a message of some size to try things out", "attachment details", False)
 
-    flash(f'{message.user} was created!')
+    flash(f'{message["to"]} was created!')
 
  
     return redirect("/messages")
