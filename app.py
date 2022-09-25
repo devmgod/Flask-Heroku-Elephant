@@ -212,13 +212,24 @@ def newmail():
  
     return render_template("newmail.html")
 
-@app.route('/reply/<int:fromid>')
-def reply(fromid):
+# @app.route('/reply/<int:fromid>/<msg_num>')
+# def reply(fromid, msg_num):
+#     """ display an email page with reply to person's e-mail already in place - should show form to create an e-mail and send"""
+
+#     replyto = User.query.get_or_404(fromid)
+#     this_msg = Msg.query.get_or_404(msg_num)
+ 
+#     return render_template("reply.html", replyto=replyto, this_msg=this_msg)
+
+@app.route('/reply/<msg_num>')
+def reply(msg_num):
     """ display an email page with reply to person's e-mail already in place - should show form to create an e-mail and send"""
 
-    replyto = User.query.get_or_404(fromid)
+    this_msg = Msg.query.get_or_404(msg_num)
+    fromnum = this_msg.from_id
+    replyto = User.query.get_or_404(fromnum) 
  
-    return render_template("reply.html", replyto=replyto)
+    return render_template("reply.html", this_msg=this_msg, replyto=replyto )
 
 @app.route('/deletemsg', methods=["GET"])
 def deletemsg():

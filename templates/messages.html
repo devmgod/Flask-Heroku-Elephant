@@ -31,7 +31,8 @@
             <td>{{ message.sender.fname }} {{ message.sender.lname }}</td>
             <td>{{ message.subject }}</td>
             <td><a href="/maildetail"><i class="fa fa-eye"></i></a></td>
-            <td><a href="/reply/{{ message.from_id}}"><i class="fa fa-envelope"></i></a></td>
+            <td>
+              <a href="/reply/{{ message.id }}"><i class="fa fa-envelope"></i></a></td>
             <td>
               <i class="fa fa-trash" data-mdb-toggle="modal"
               data-mdb-target="#exampleModal"></i> 
