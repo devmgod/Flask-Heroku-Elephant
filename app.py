@@ -144,11 +144,14 @@ def mystuff():
 
 
 
-@app.route('/comicdetail', methods=["GET"])
-def comicdetail():
+@app.route('/comicdetail/<int:id>', methods=["GET"])
+def comicdetail(id):
     """ Comic Detail page - should have links to a specific user's comic with all details and option to edit it"""
 
-    return render_template("comic-detail.html")
+    #query this comic
+    comic = Comic.query.get_or_404(id)
+
+    return render_template("comic-detail.html", comic=comic)
 
 
 
