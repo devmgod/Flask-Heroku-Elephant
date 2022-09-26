@@ -148,8 +148,18 @@ def comicdetail():
 @app.route('/search', methods=["GET"])
 def search():
     """ Search page - should default to most popular titles available, and be able to search books by title, date range, pedigree, condition, price range..."""
+
+    #TODO: TEMPORARY - UPDATE WITH USER FROM LOGIN
+    session['current_user']=1
+    current_user = session['current_user']
+
+    #query all comics EXCEPT this user
+    comics = Comic.query.filter(Comic.owner_id != current_user)
+    # senders = User.query.join(Msg).filter(Msg.to_id == current_user)
+    # print(senders)
+    # owners = User.query.all()
  
-    return render_template("search.html")
+    return render_template("search.html", comics=comics)
 
 
 

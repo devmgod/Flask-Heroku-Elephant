@@ -221,97 +221,32 @@
                 <table class="table table-striped mb-5">
                     <thead>
                       <tr class="clickable-table-row" data-href="/comicdetail">
-                        <th scope="col">#</th>
+                        <th scope="col">owner#</th>
                         <th scope="col">Image</th>
                         <th scope="col">Title</th>
                         <th scope="col">Issue #</th>
                         <th scope="col">year</th>
                         <th scope="col">Grade</th>
+                        <th scope="col">Est. Value</th>
                         <th scope="col">Pedigree</th>
                       </tr>
                     </thead>
                     <tbody>
+
+                      {% for comic in comics%}
                       <tr class="clickable-table-row" data-href="/comicdetail">
-                        <th scope="row"  data-comic-id="1357">1</th>
-                        <td class="table-image"><img src="../static/images/batman-p-250.jpg"></img></td>
-                        <td>Batman</td>
-                        <td>101</td>
-                        <td>1975</td>
-                        <td>9.0</td>
-                        <td>Bowling Green</td>
+                        <th scope="row"  data-comic-id="{{ comic_id }}">{{ comic.owner_id }}</th>
+                        <td class="table-image"><img src="{{ comic.cover_pic }}"></img></td>
+                        <td>{{ comic.title }}</td>
+                        <td>{{ comic.issue_num}}</td>
+                        <td>{{ comic.month}} {{ comic.year }}</td>
+                        <td>{{ comic.cgc_grade }}</td>
+                        <td>{{ comic.assessed_value }}</td>
+                        <td>{{ comic.pedigree }}</td>
                       </tr>
-                      <tr class="clickable-table-row" data-href="/comicdetail">
-                        <th scope="row"  data-comic-id="2468">2</th>
-                        <td class="table-image"><img src="../static/images/captain_america-p-250.jpg"></img></td>
-                        <td>Captain America</td>
-                        <td>37</td>
-                        <td>1974</td>
-                        <td>8.9</td>
-                        <td>Boston</td>
-                      </tr>
-                      <tr class="clickable-table-row" data-href="/comicdetail">
-                        <th scope="row"  data-comic-id="1357">1</th>
-                        <td class="table-image"><img src="../static/images/Dr_strange-p-250.jpg"></img></td>
-                        <td>Dr. Strange</td>
-                        <td>101</td>
-                        <td>1975</td>
-                        <td>9.0</td>
-                        <td>Bowling Green</td>
-                      </tr>
-                      <tr class="clickable-table-row" data-href="/comicdetail">
-                        <th scope="row"  data-comic-id="1357">1</th>
-                        <td class="table-image"><img src="../static/images/iron_man-p-250.webp"></img></td>
-                        <td>Iron Man</td>
-                        <td>89</td>
-                        <td>1975</td>
-                        <td>9.0</td>
-                        <td>Bowling Green</td>
-                      </tr>
-                      <tr class="clickable-table-row" data-href="/comicdetail">
-                        <th scope="row"  data-comic-id="1357">1</th>
-                        <td class="table-image"><img src="../static/images/spider_man_coolest_pic-p-250.jpg"></img></td>
-                        <td>Spider-Man</td>
-                        <td>114</td>
-                        <td>1981</td>
-                        <td>9.0</td>
-                        <td>Bowling Green</td>
-                      </tr>
-                      <tr class="clickable-table-row" data-href="/comicdetail">
-                        <th scope="row"  data-comic-id="1357">1</th>
-                        <td class="table-image"><img src="../static/images/fantastic4_and_black_panther-p-250.jpg"></img></td>
-                        <td>Fantastic 4 & The Black Panther</td>
-                        <td>42</td>
-                        <td>1991</td>
-                        <td>9.0</td>
-                        <td>Bowling Green</td>
-                      </tr>
-                      <tr class="clickable-table-row" data-href="/comicdetail">
-                        <th scope="row"  data-comic-id="1357">1</th>
-                        <td class="table-image"><img src="../static/images/superman-p-250.jpg"></img></td>
-                        <td>Superman</td>
-                        <td>320</td>
-                        <td>1995</td>
-                        <td>9.0</td>
-                        <td>Bowling Green</td>
-                      </tr>
-                      <tr class="clickable-table-row" data-href="/comicdetail">
-                        <th scope="row"  data-comic-id="1357">1</th>
-                        <td class="table-image"><img src="../static/images/wonder_woman_cooler-p-250.jpg"></img></td>
-                        <td>Wonder Woman</td>
-                        <td>77</td>
-                        <td>1970</td>
-                        <td>9.0</td>
-                        <td>Bowling Green</td>
-                      </tr>
-                      <tr class="clickable-table-row" data-href="/comicdetail">
-                        <th scope="row"  data-comic-id="1357">1</th>
-                        <td class="table-image"><img src="../static/images/x-men_kitty.jpg"></img></td>
-                        <td>X-Men: Kitty Pride</td>
-                        <td>3</td>
-                        <td>1989</td>
-                        <td>9.0</td>
-                        <td>Bowling Green</td>
-                      </tr>
+
+                      {% endfor %}
+
                     </tbody>
                 </table>
 

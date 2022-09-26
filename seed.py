@@ -68,12 +68,19 @@ comic2 = Comic(owner_id=1, title="Captain America", issue_num=100, cgc_grade=9.9
 
 comic3 = Comic(owner_id=1, title="Doctor Strange", issue_num=50, cgc_grade=9.9,assessed_value=9.99, assessed_source="CGC", thumbnail="../static/images/Dr_strange-p-250.jpg", cover_pic="../static/images/Dr_strange-p-100.jpg", back_cover_pic="", extra_media="", publisher="Marvel", year=1993, notes="Holographic giant issue Guest starring Ghost Rider, Hulk and Silver Surfer'", signed=False, pedigree=3, location=0)
 
+comic4 = Comic(owner_id=2, title="Fantastic 4", issue_num=52, cgc_grade=9.9,assessed_value=4000, assessed_source="CGC", thumbnail="../static/images/fantastic4_and_black_panther-p-250.jpg", cover_pic="../static/images/fantastic4_and_black_panther-p-1080.jpg", back_cover_pic="", extra_media="", publisher="Marvel", month="July", year=1966, notes="Featuring Black Panther", signed=False, pedigree=4, location=0)
 
+comic5 = Comic(owner_id=2, title="Amazing Fantasy Featuring Spider-Man", issue_num=15, cgc_grade=9.0,assessed_value=1100000, assessed_source="CGC", thumbnail="../static/images/spider_man_coolest_pic-p-250.jpg", cover_pic="../static/images/spider_man_coolest_pic.jpg", back_cover_pic="", extra_media="", publisher="Marvel", month="August", year=1962, notes="First appearance of Spider-Man", signed=False, pedigree=5, location=0)
+
+comic6 = Comic(owner_id=2, title="Action Comics featuring Superman", issue_num=419, cgc_grade=9.0,assessed_value=6.0, assessed_source="CGC", thumbnail="../static/images/superman-p-250.jpg", cover_pic="../static/images/superman-p-1080.jpg", back_cover_pic="", extra_media="", publisher="Marvel", month="August", year=1972, notes="First appearance of Spider-Man", signed=False, pedigree=5, location=0)
 
 # Add new messages to session, so they'll persist
 db.session.add(comic1)
 db.session.add(comic2)
 db.session.add(comic3)
+db.session.add(comic4)
+db.session.add(comic5)
+db.session.add(comic6)
 
 
 
