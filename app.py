@@ -4,7 +4,7 @@ from flask import Flask, request, render_template, redirect, flash, session, jso
 # from flask_uploads import configure_uploads, IMAGES, UploadSet
 # from forms import User_registration, Create_memorial_form, Post_form, LoginForm, ZipForm, AddFlowerToCart, FlowerOrderForm
 import json 
-from models import db, connect_db, Msg, User
+from models import db, connect_db, Msg, User, Comic
 from os import getenv
 # import requests, base64
 # import socket
@@ -160,7 +160,7 @@ def inbox():
     """ inbox page - should show all messages recieved from members with a mail search box and pagination"""
 
     #TODO: TEMPORARY - UPDATE WITH USER FROM LOGIN
-    session['current_user']=2
+    session['current_user']=1
     current_user = session['current_user']
 
     #query all of this user's messages

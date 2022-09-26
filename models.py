@@ -63,6 +63,89 @@ class User(db.Model):
 
 ############################# COMICS ######################################
 
+class Comic(db.Model):
+
+    __tablename__ =  "comics"
+
+    id = db.Column(db.Integer,
+    primary_key = True,
+    autoincrement = True)
+
+    # trades table will show other user involved and ownership changes during a trade
+    owner_id = db.Column(db.Integer,
+    db.ForeignKey('users.id'),
+    nullable = False)
+
+    owner = db.relationship('User')
+
+    title = db.Column(db.String(50),
+    nullable=False)
+
+    issue_num = db.Column(db.Integer,
+    nullable = False)
+
+    cgc_grade = db.Column(db.Float)
+
+    assessed_value = db.Column(db.Float)
+
+    assessed_source = db.Column(db.String(50), default="CGC")
+
+    thumbnail = db.Column(db.Text)
+
+    cover_pic = db.Column(db.Text)
+
+    back_cover_pic = db.Column(db.Text)
+
+    extra_media = db.Column(db.Text)
+
+    publisher = db.Column(db.Text)
+
+    month = db.Column(db.String(10))
+
+    year = db.Column(db.Integer)
+
+    notes = db.Column(db.Text)
+
+    signed = db.Column(db.Boolean)
+
+    #TODO: MAKE/RELATE TO PEDIGREE TABLE
+    pedigree = db.Column(db.Integer) 
+
+    #TODO: MAKE/RELATE TO LOCATION TABLE
+    #outgoing, home is 0, at comic-swap, etc.
+    location = db.Column(db.Integer, default=0)
+
+
+
+    # from_id = db.Column(db.Integer,
+    # db.ForeignKey('users.id'),
+    # nullable = False)
+
+    # maildate = db.Column(db.DateTime, nullable=False,
+    # default=datetime.utcnow)
+
+
+
+    # sender = db.relationship('User')
+
+
+    # content = db.Column(db.Text,
+    # nullable = False)
+
+    # read = db.Column(db.Boolean,
+    # default = False)
+
+    # attachments = db.Column(db.Text)
+
+    @classmethod
+    # def get_all_unread(cls):
+    #     return cls.query.filter(Msg.read == True ).all()
+
+    def __repr__(self):
+            p = self
+            return f"<Message id={p.id} to_id={p.to_id} from_id={p.from_id} subject={p.subject} content={p.content} read={p.read} attachments={p.attachments}>"
+
+
 ############################# DEALS ######################################
 
 ############################# OFFERS ######################################

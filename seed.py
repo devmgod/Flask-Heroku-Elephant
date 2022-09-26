@@ -1,6 +1,6 @@
 """Seed file to make sample data for comicswap2 db."""
 
-from models import db, Msg, User
+from models import db, Msg, User, Comic
 from app import app
 
 # Create all tables
@@ -55,6 +55,25 @@ msg3 = Msg(to_id=1, from_id=2, subject="2nd msg for user 1", content="this would
 db.session.add(msg1)
 db.session.add(msg2)
 db.session.add(msg3)
+
+
+############################### COMICS ####################################
+# If table isn't empty, empty it
+Comic.query.delete()
+
+# Add messages
+comic1 = Comic(owner_id=1, title="Batman", issue_num=265, cgc_grade=9.6,assessed_value=40.0, assessed_source="CGC", thumbnail="../static/images/batman-p-250.jpg", cover_pic="../static/images/batman-p-1080.jpg", back_cover_pic="", extra_media="", publisher="DC", year=1975, notes="Title is Batman's greatest failure", signed=True, pedigree=1, location=0)
+
+comic2 = Comic(owner_id=1, title="Captain America", issue_num=100, cgc_grade=9.9,assessed_value=5400, assessed_source="CGC", thumbnail="../static/images/captain_america-p-250.jpg", cover_pic="../static/images/captain_america-p-1080.jpg", back_cover_pic="", extra_media="", publisher="Marvel", year=1968, notes="Title is 'Big Premier Issue'", signed=False, pedigree=2, location=0)
+
+comic3 = Comic(owner_id=1, title="Doctor Strange", issue_num=50, cgc_grade=9.9,assessed_value=9.99, assessed_source="CGC", thumbnail="../static/images/Dr_strange-p-250.jpg", cover_pic="../static/images/Dr_strange-p-100.jpg", back_cover_pic="", extra_media="", publisher="Marvel", year=1993, notes="Holographic giant issue Guest starring Ghost Rider, Hulk and Silver Surfer'", signed=False, pedigree=3, location=0)
+
+
+
+# Add new messages to session, so they'll persist
+db.session.add(comic1)
+db.session.add(comic2)
+db.session.add(comic3)
 
 
 
