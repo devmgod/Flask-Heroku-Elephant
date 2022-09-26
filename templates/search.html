@@ -223,7 +223,7 @@
             <section>
                 <table class="table table-striped mb-5">
                     <thead>
-                      <tr class="clickable-table-row" data-href="/comicdetail">
+                      <tr class="" >
                         <th scope="col">owner#</th>
                         <th scope="col">Image</th>
                         <th scope="col">Title</th>
@@ -237,8 +237,8 @@
                     <tbody>
 
                       {% for comic in comics%}
-                      <tr class="clickable-table-row" data-href="/comicdetail">
-                        <th scope="row"  data-comic-id="{{ comic_id }}">{{ comic.owner_id }}</th>
+                      <tr class="clickable-table-row" data-href="/comicdetail/{{ comic.id}}">
+                        <th scope="row"  data-comic-id="{{ comic.id }}">{{ comic.owner_id }}</th>
                         <td class="table-image"><img src="{{ comic.cover_pic }}"></img></td>
                         <td>{{ comic.title }}</td>
                         <td>{{ comic.issue_num}}</td>
