@@ -133,7 +133,14 @@ def about():
 def mystuff():
     """ My Stuff page - should have link to user's library of trade offerings, list of offers made, offers received, things being shipped, books that they are watching for..."""
 
-    return render_template("mystuff.html")
+    #TODO: TEMPORARY - UPDATE WITH USER FROM LOGIN
+    session['current_user']=1
+    current_user = session['current_user']
+
+    #query all comics EXCEPT this user
+    mycomics = Comic.query.filter(Comic.owner_id == current_user)
+
+    return render_template("mystuff.html", mycomics=mycomics)
 
 
 
@@ -155,9 +162,7 @@ def search():
 
     #query all comics EXCEPT this user
     comics = Comic.query.filter(Comic.owner_id != current_user)
-    # senders = User.query.join(Msg).filter(Msg.to_id == current_user)
-    # print(senders)
-    # owners = User.query.all()
+
  
     return render_template("search.html", comics=comics)
 

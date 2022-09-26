@@ -62,7 +62,7 @@ db.session.add(msg3)
 Comic.query.delete()
 
 # Add messages
-comic1 = Comic(owner_id=1, title="Batman", issue_num=265, cgc_grade=9.6,assessed_value=40.0, assessed_source="CGC", thumbnail="../static/images/batman-p-250.jpg", cover_pic="../static/images/batman-p-1080.jpg", back_cover_pic="", extra_media="", publisher="DC", year=1975, notes="Title is Batman's greatest failure", signed=True, pedigree=1, location=0)
+comic1 = Comic(owner_id=1, title="Batman", issue_num=265, cgc_grade=9.6,assessed_value=40.0, assessed_source="CGC", thumbnail="../static/images/batman-p-500.jpg", cover_pic="../static/images/batman-p-1080.jpg", back_cover_pic="", extra_media="", publisher="DC", year=1975, notes="Title is Batman's greatest failure", signed=True, pedigree=1, location=0)
 
 comic2 = Comic(owner_id=1, title="Captain America", issue_num=100, cgc_grade=9.9,assessed_value=5400, assessed_source="CGC", thumbnail="../static/images/captain_america-p-250.jpg", cover_pic="../static/images/captain_america-p-1080.jpg", back_cover_pic="", extra_media="", publisher="Marvel", year=1968, notes="Title is 'Big Premier Issue'", signed=False, pedigree=2, location=0)
 

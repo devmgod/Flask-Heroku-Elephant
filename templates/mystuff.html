@@ -17,7 +17,7 @@
 
 
 
-    <h1>MY STUFF</h1>
+    <h1>MY STUFF</h1> 
     <p><a href="#trades">My Trades</a> | <a href="#collection">My Collection</a> | <a href="#watchlist">My Watchlist</a></p>
     <h2 id="trades">My Trades</h2>
 
@@ -50,63 +50,48 @@
             <td>In transit</td>
           </tr>
           
-            <tr class="clickable-table-row" data-href="/comicdetail">
-                <th scope="row">3</th>
-                <td class="table-image"><img src="../static/images/Dr_strange-p-250.jpg"></img></td>
-                <td>Frodo</td>
-                <td>2468</td>
-                <td>Sent</td>
-                <td>Completed</td>
-                </tr>
-            <tr class="clickable-table-row" data-href="/comicdetail">
-                <th scope="row">4</th>
-                <td class="table-image"><img src="../static/images/fantastic4_and_black_panther-p-250.jpg"></img></td>
-                <td>Sam</td>
-                <td>13579</td>
-                <td>Received</td>
-                <td>Completed</td>
-            </tr>
         </tbody>
       </table>
 
-                      <!-- pagination -->
-                      <div class="row">
-                        <div
-                          class="col-lg-4 col-md-12 mb-4 d-flex justify-content-center"
-                        >
-                          <nav aria-label="...">
-                            <ul class="pagination">
-                              <li class="page-item disabled">
-                                <a
-                                  class="page-link"
-                                  href="#"
-                                  tabindex="-1"
-                                  aria-disabled="true"
-                                  >Previous</a
-                                >
-                              </li>
-                              <li class="page-item">
-                                <a class="page-link" href="#">1</a>
-                              </li>
-                              <li class="page-item active" aria-current="page">
-                                <a class="page-link" href="#"
-                                  >2 <span class="visually-hidden">(current)</span></a
-                                >
-                              </li>
-                              <li class="page-item">
-                                <a class="page-link" href="#">3</a>
-                              </li>
-                              <li class="page-item">
-                                <a class="page-link" href="#">Next</a>
-                              </li>
-                            </ul>
-                          </nav>
-                        </div>
-          
-    
-    
-                      </div>
-                    <!-- end pagination -->
+
+      <!-- pagination -->
+      <div class="row">
+        <div
+          class="col-lg-4 col-md-12 mb-4 d-flex justify-content-center"
+        >
+          <nav aria-label="...">
+            <ul class="pagination">
+              <li class="page-item disabled">
+                <a
+                  class="page-link"
+                  href="#"
+                  tabindex="-1"
+                  aria-disabled="true"
+                  >Previous</a
+                >
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="#">1</a>
+              </li>
+              <li class="page-item active" aria-current="page">
+                <a class="page-link" href="#"
+                  >2 <span class="visually-hidden">(current)</span></a
+                >
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="#">3</a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="#">Next</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+
+
+      </div>
+    <!-- end pagination -->
 
 
     <h2 id="collection">My Comic Collection</h2>
@@ -123,65 +108,62 @@
           </tr>
         </thead>
         <tbody>
+
+        {% for mycomic in mycomics %}
           <tr class="clickable-table-row" data-href="/comicdetail">
-            <th scope="row"  data-comic-id="1357">1</th>
-            <td class="table-image"><img src="../static/images/batman-p-250.jpg"></img></td>
-            <td>Batman</td>
-            <td>101</td>
-            <td>1975</td>
-            <td>9.0</td>
-            <td>Bowling Green</td>
+            <th scope="row"  data-comic-id="{{ mycomic.id }}">1</th>
+            <td class="table-image"><img src="{{ mycomic.thumbnail }}"></img></td>
+            <td>{{ mycomic.title }}</td>
+            <td>{{ mycomic.issue_num }}</td>
+            <td>{{ mycomic.year }}</td>
+            <td>{{ mycomic.cgc_grade }}</td>
+            <td>{{ mycomic.pedigree }}</td>
           </tr>
-          <tr class="clickable-table-row" data-href="/comicdetail">
-            <th scope="row"  data-comic-id="2468">2</th>
-            <td class="table-image"><img src="../static/images/captain_america-p-250.jpg"></img></td>
-            <td>Captain America</td>
-            <td>37</td>
-            <td>1974</td>
-            <td>8.9</td>
-            <td>Boston</td>
-          </tr>
+
+        {% endfor %}
+
+
         </tbody>
     </table>
 
-                    <!-- pagination -->
-                    <div class="row">
-                        <div
-                          class="col-lg-4 col-md-12 mb-4 d-flex justify-content-center"
-                        >
-                          <nav aria-label="...">
-                            <ul class="pagination">
-                              <li class="page-item disabled">
-                                <a
-                                  class="page-link"
-                                  href="#"
-                                  tabindex="-1"
-                                  aria-disabled="true"
-                                  >Previous</a
-                                >
-                              </li>
-                              <li class="page-item">
-                                <a class="page-link" href="#">1</a>
-                              </li>
-                              <li class="page-item active" aria-current="page">
-                                <a class="page-link" href="#"
-                                  >2 <span class="visually-hidden">(current)</span></a
-                                >
-                              </li>
-                              <li class="page-item">
-                                <a class="page-link" href="#">3</a>
-                              </li>
-                              <li class="page-item">
-                                <a class="page-link" href="#">Next</a>
-                              </li>
-                            </ul>
-                          </nav>
-                        </div>
-          
-    
-    
-                      </div>
-                    <!-- end pagination -->
+      <!-- pagination -->
+      <div class="row">
+          <div
+            class="col-lg-4 col-md-12 mb-4 d-flex justify-content-center"
+          >
+            <nav aria-label="...">
+              <ul class="pagination">
+                <li class="page-item disabled">
+                  <a
+                    class="page-link"
+                    href="#"
+                    tabindex="-1"
+                    aria-disabled="true"
+                    >Previous</a
+                  >
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="#">1</a>
+                </li>
+                <li class="page-item active" aria-current="page">
+                  <a class="page-link" href="#"
+                    >2 <span class="visually-hidden">(current)</span></a
+                  >
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="#">3</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="#">Next</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+
+
+
+        </div>
+      <!-- end pagination -->
 
       <!-- SCRIPT TO MAKE WHOLE TABLE ROW CLICKABLE -->
       <script>

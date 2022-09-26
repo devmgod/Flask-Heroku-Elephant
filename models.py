@@ -146,14 +146,15 @@ class Comic(db.Model):
             return f"<Message id={p.id} to_id={p.to_id} from_id={p.from_id} subject={p.subject} content={p.content} read={p.read} attachments={p.attachments}>"
 
 
-############################# DEALS ######################################
+############################# DEALS ####################################
 
-############################# OFFERS ######################################
+############################# OFFERS ####################################
+
+############################# WATCHLIST #################################
+# connects comics and user
 
 
-
-
-############################# MESSAGES ######################################
+############################# MESSAGES #################################
 class Msg(db.Model):
 
     __tablename__ =  "messages"
@@ -193,6 +194,6 @@ class Msg(db.Model):
             p = self
             return f"<Message id={p.id} to_id={p.to_id} from_id={p.from_id} subject={p.subject} content={p.content} read={p.read} attachments={p.attachments}>"
 
-############################# PEDIGREES ######################################
+############################# PEDIGREES ###############################
 
-############################# ARTICLES ######################################
+############################# ARTICLES #############################
