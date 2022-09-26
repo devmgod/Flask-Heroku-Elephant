@@ -271,12 +271,26 @@ def subscribe():
 
 @app.route('/offertrade', methods=["GET"])
 def offertrade():
-    """ processes the request for a trade.  Should:
-    - send a message to book owner asking for it and the terms including additional money if app.
-    - Shows message saying "this constitutes a binding contract and if the trade is canceled by either party the fee will still be owed (?)
+    """ 
+    - offers user a form to initiate a trade
+    -  should have drop-downs indicating options
+    - Should have link to their collection with ability to choose more than one
+    - 
+    - ask client for legalize he wants here
     """
  
     return render_template("offertrade.html")
+
+
+@app.route('/tradeoffered', methods=["GET"])
+def tradeoffered():
+    """ show trade offered page - later change for a flash and redirect to prior page(?)
+    """
+ 
+    return render_template("tradeoffered.html")
+
+
+
 
 @app.route('/acceptoffer', methods=["GET"])
 def acceptoffer():
