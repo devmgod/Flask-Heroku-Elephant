@@ -22,6 +22,9 @@ from my_secrets import API_SECRET_KEY
 #TODO:
 # from forms import User_registration, User_login, Admin_registration, Admin_login
 
+
+############################# APP START ##############################
+
 app=Flask(__name__)
 
 
