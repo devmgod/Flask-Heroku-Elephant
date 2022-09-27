@@ -110,7 +110,7 @@
         <tbody>
 
         {% for mycomic in mycomics %}
-          <tr class="clickable-table-row" data-href="/comicdetail/{{ mycomic.id}}">
+          <tr class="clickable-table-row" data-href="/editcomic/{{ mycomic.id}}">
             <th scope="row"  data-comic-id="{{ mycomic.id }}">1</th>
             <td class="table-image"><img src="{{ mycomic.thumbnail }}"></img></td>
             <td>{{ mycomic.title }}</td>

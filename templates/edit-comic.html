@@ -22,27 +22,14 @@
         <div class="col-3 mb-4">
         <img src="{{ comic.thumbnail }}"></img>
         <div class="row ">
-            <div class="col-12 pt-2 pb-2 d-flex justify-content-center">               
 
-                    <form action="/mailowner/{{ comic.id }}">
-                        <button type="submit" class="btn btn-outline-primary {{ user_flags.msg_class }}" >
-                            MESSAGE OWNER 
-                        </button>
-                    </form>
-
-                </div>
             <div class="col-12 pt-2 pb-2 d-flex justify-content-center">
-                <button type="button" class="btn btn-outline-secondary {{ user_flags.ofr_trade }}" data-mdb-ripple-color="dark" onclick="location.href='/offertrade'">
-                OFFER A TRADE
-              </button>
-            </div>
-            <div class="col-12 pt-2 pb-2 d-flex justify-content-center">
-                <button type="button" class="btn btn-outline-success {{ user_flags.ofr_accept }}" data-mdb-ripple-color="dark" onclick="location.href='/acceptoffer'">
+                <button type="button" class="btn btn-outline-success" data-mdb-ripple-color="dark" onclick="location.href='/acceptoffer'">
                 ACCEPT OFFER
                 </button>
             </div>
             <div class="col-12 pt-2 pb-2 d-flex justify-content-center">
-                <button type="button" class="btn btn-outline-warning {{ user_flags.have_mailed }}" data-mdb-ripple-color="dark" onclick="location.href='/markedasmailed'">
+                <button type="button" class="btn btn-outline-warning" data-mdb-ripple-color="dark" onclick="location.href='/markedasmailed'">
                 I HAVE MAILED THIS
                 </button>
             </div>
@@ -53,7 +40,7 @@
         <div class="col-9 mb-4">
             <!--Section: Comic Detail form-->
             <section class="shadow-5 p-4">
-                <form class="unclickable">
+                <form class="">
 
                     <!-- Text input for comic owner -->
                     <div class="form-outline mb-4">

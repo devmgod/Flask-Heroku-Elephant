@@ -146,12 +146,71 @@ def mystuff():
 
 @app.route('/comicdetail/<int:id>', methods=["GET"])
 def comicdetail(id):
-    """ Comic Detail page - should have links to a specific user's comic with all details and option to edit it"""
+    """ Comic Detail page - should have links to a specific user's comic with all details and option to edit it
+    supply css descriptors to show or hide buttons under comic
+    .invisible to not display
+    .unclickable to not be able to click
+
+    """
+
+    session['current_user']=1
+    current_user = session['current_user']
+
+    #TODO: make this editable for book owner only
 
     #query this comic
     comic = Comic.query.get_or_404(id)
 
-    return render_template("comic-detail.html", comic=comic)
+
+    # TODO: consider doing this with a template instead?
+    #Decide which buttons to show depending on whether this is a current user's comic
+    msg_class= ""
+    ofr_trade= ""
+    ofr_accept = ""
+    have_mailed = ""
+
+    if comic.owner_id == current_user:
+        msg_class = "invisible"
+        ofr_trade = "invisible"
+        #TODO: make btn visable here if offer is made
+        #TODO: make btn visable here for user to show status of mailed/not
+    else:
+        ofr_accept = "invisible"
+        have_mailed = "invisible"
+
+    user_flags = {
+        "msg_class":msg_class,
+        "ofr_trade":ofr_trade,
+        "ofr_accept":ofr_accept,
+        "have_mailed":have_mailed}
+
+    return render_template("comic-detail.html", comic=comic, user_flags=user_flags )
+
+#
+
+@app.route('/editcomic/<int:id>', methods=["GET"])
+def editcomic(id):
+    """ Comic Detail page - should have links to a specific user's comic with all details and option to edit it"""
+
+    session['current_user']=1
+    current_user = session['current_user']
+
+    """TODO: make this editable for book owner only with 
+        - an edit button that uses JS to toggle the unclickable button on fields
+        - code that toggles "You have offers(s) - check them now" button if you have one
+    """
+
+    #query this comic
+    comic = Comic.query.get_or_404(id) 
+
+    #check authorization
+    if comic.owner_id == current_user:
+        return render_template("edit-comic.html", comic=comic)
+    else:
+        return render_template("search.html")
+
+    
+
 
 
 
@@ -260,15 +319,25 @@ def newmail():
  
 #     return render_template("reply.html", replyto=replyto, this_msg=this_msg)
 
-@app.route('/reply/<msg_num>')
+@app.route('/reply/<msg_num>')  
 def reply(msg_num):
     """ display an email page with reply to person's e-mail already in place - should show form to create an e-mail and send"""
 
     this_msg = Msg.query.get_or_404(msg_num)
     fromnum = this_msg.from_id
-    replyto = User.query.get_or_404(fromnum) 
+    replyto = User.query.get_or_404(fromnum)  
  
     return render_template("reply.html", this_msg=this_msg, replyto=replyto )
+
+@app.route('/mailowner/<int:comic_id>')     
+def mailowner(comic_id):
+    """ display an email page with reply to person's e-mail already in place - should show form to create an e-mail and send"""
+
+    this_comic = Comic.query.get_or_404(comic_id)
+    this_owner = this_comic.owner_id
+    replyto = User.query.get_or_404(this_owner)
+ 
+    return render_template("reply.html", this_msg=this_comic, replyto=replyto )
 
 @app.route('/deletemsg', methods=["GET"])
 def deletemsg():
