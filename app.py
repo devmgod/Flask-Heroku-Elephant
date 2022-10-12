@@ -2,7 +2,7 @@ import datetime
 from flask import Flask, request, render_template, redirect, flash, session, jsonify, url_for
 # from flask_debugtoolbar import DebugToolbarExtension
 # from flask_uploads import configure_uploads, IMAGES, UploadSet
-# from forms import User_registration, Create_memorial_form, Post_form, LoginForm, ZipForm, AddFlowerToCart, FlowerOrderForm
+import forms
 import json 
 from models import db, connect_db, Msg, User, Comic
 from os import getenv
@@ -10,6 +10,8 @@ from os import getenv
 # import socket
 # from flowershop import *
 import pdb
+
+from forms import EditComicsForm
 # from date_and_time_functions import *
 
 # from CRUD_psql import * 
@@ -188,9 +190,12 @@ def comicdetail(id):
 
 #
 
-@app.route('/editcomic/<int:id>', methods=["GET"])
+@app.route('/editcomic/<int:id>', methods=["GET","POST"])
 def editcomic(id):
     """ Comic Detail page - should have links to a specific user's comic with all details and option to edit it"""
+
+    form = EditComicsForm()
+
 
     session['current_user']=1
     current_user = session['current_user']
@@ -205,9 +210,24 @@ def editcomic(id):
 
     #check authorization
     if comic.owner_id == current_user:
-        return render_template("edit-comic.html", comic=comic)
+
+        #form validation
+        if form.validate_on_submit():
+            name = form.name.data
+        price = form.price.data
+        flash(f"Added {name} at {price}")
+        return redirect("/add")
+
     else:
-        return render_template("search.html")
+        return render_template(
+            "snack_add_form.html", form=form)
+
+        return render_template("edit-comic.html", comic=comic)
+
+
+
+    #if authorization fails...
+    return render_template("search.html")
 
     
 
