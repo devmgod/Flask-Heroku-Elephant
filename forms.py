@@ -3,40 +3,34 @@ from wtforms import StringField, FloatField, DateField, DateTimeField, IntegerFi
 from wtforms.validators import InputRequired, Optional, Email, NumberRange, AnyOf, URL
 
 class EditComicsForm(FlaskForm):
-    """
-    TODO:  FIX NameError: name 'IntegerField' is not defined
 
-    with all the field definitions.
-
-    """
-
-    owner = StringField("label text", 
+    owner = StringField("Owner's Name", 
         validators = [InputRequired(message = "cannot be blank")])
 
-    comictitle = StringField("label text", 
+    comictitle = StringField("Title of Comic", 
         validators = [InputRequired(message = "cannot be blank")])
 
 
-    issuenumber = IntegerField("must be an integer")
+    issuenumber = IntegerField("Issue Number")
 
-    year = IntegerField("must be an integer")
+    year = IntegerField("Year")
 
-    price = FloatField("must be a number")
+    price = FloatField("Price")
 
-    publisher = StringField("label text", 
+    publisher = StringField("Publisher", 
         validators = [InputRequired(message = "cannot be blank")])
 
-    pedigree = IntegerField("must be an integer")
+    pedigree = IntegerField("Pedigree")
 
-    location = IntegerField("must be an integer")
+    location = IntegerField("Location")
 
-    grade = FloatField("must be a number")
+    grade = FloatField("Grade")
 
 
     email = StringField("Email", 
         validators = [Optional(), Email()])
 
-    notes = StringField("label text", 
+    notes = StringField("Notes", 
         validators = [InputRequired(message = "cannot be blank")])
 
 

@@ -213,13 +213,24 @@ def editcomic(id):
     comic = Comic.query.get_or_404(id) 
 
     #check authorization
-    if comic.owner_id == current_user:
+    if comic.owner_id == current_user: 
 
         #form validation
-        if form.validate_on_submit():
-            name = form.name.data
-            flash(f"Collected {name} from form")
-            return redirect("/mystuff")
+        if form.validate_on_submit(): 
+            owner = form.owner.data
+            comictitle = form.comictitle.data
+            issuenumber = form.issuenumber.data
+            year = form.year.data
+            price = form.price.data
+            publisher = form.publisher.data
+            pedigree = form.pedigree.data
+            location = form.location.data
+            grade = form.grade.data
+            email = form.email.data
+            notes = form.notes.data   
+
+            flash(f"Collected {owner} from form")
+            return redirect("/mystuff")         
 
         else:
             flash(f"Form not updated")
@@ -228,6 +239,7 @@ def editcomic(id):
 
 
     #if authorization fails...
+    flash(f"NOT CURRENT USER")
     return render_template("search.html")
 
     

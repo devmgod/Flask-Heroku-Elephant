@@ -40,15 +40,24 @@
             <!--Section: Comic Detail form-->
             <section class="shadow-5 p-4">
                 <form class="" action="/editcomic/{{ comic.id }}" method="post">
+                    {{ form.hidden_tag() }}
 
                     <!-- Text input for comic owner -->
                     <div class="form-outline mb-4">
+                        {{form.owner(class='form-control unclickable')}}
+                            {% for error in form.owner.errors %} 
+                            <br>
+                            <small class="form-text text-danger">
+                                {{ error }} 
+                            </small>
+                            {% endfor %} 
+
                         <input
                         value="{{ comic.owner.fname }} {{ comic.owner.lname }}"
                         type="text"
                         id="owner"
                         name="owner"
-                        class="form-control"
+                        class="form-control unclickable"
                         autocomplete="off"
                         style="
                         background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAUBJREFUOBGVVE2ORUAQLvIS4gwzEysHkHgnkMiEc4zEJXCMNwtWTmDh3UGcYoaFhZUFCzFVnu4wIaiE+vvq6+6qTgthGH6O4/jA7x1OiCAIPwj7CoLgSXDxSjEVzAt9k01CBKdWfsFf/2WNuEwc2YqigKZpK9glAlVVwTTNbQJZlnlCkiTAZnF/mePB2biRdhwHdF2HJEmgaRrwPA+qqoI4jle5/8XkXzrCFoHg+/5ICdpm13UTho7Q9/0WnsfwiL/ouHwHrJgQR8WEwVG+oXpMPaDAkdzvd7AsC8qyhCiKJjiRnCKwbRsMw9hcQ5zv9maSBeu6hjRNYRgGFuKaCNwjkjzPoSiK1d1gDDecQobOBwswzabD/D3Np7AHOIrvNpHmPI+Kc2RZBm3bcp8wuwSIot7QQ0PznoR6wYSK0Xb/AGVLcWwc7Ng3AAAAAElFTkSuQmCC');
@@ -80,6 +89,17 @@
                     <div class="row mb-4">
                         <div class="col">
                             <div class="form-outline">
+                                <!-- ADD THIS PERHAPS?
+                                (class='form-control unclickable')
+                             -->
+                                {{form.comictitle}}
+                                    {% for error in form.owner.errors %} 
+                                    <br>
+                                    <small class="form-text text-danger">
+                                        {{ error }} 
+                                    </small>
+                                    {% endfor %} 
+
                                 <input  type="text" 
                                 id="comictitle" 
                                 name="comictitle" 
@@ -93,7 +113,7 @@
                                 background-position: 98% 50%;
                                 "
                     autocomplete="off"
-                />
+                                />
                 <label
                     class="form-label"
                     for="comictitle"
