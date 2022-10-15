@@ -197,3 +197,8 @@ h3 {
 .invisible {
   display: none;
 }
+
+.wtfforms {
+  background-color: black;
+  color:white;
+}

@@ -26,6 +26,9 @@ class EditComicsForm(FlaskForm):
 
     grade = FloatField("Grade")
 
+    assessed_source = StringField("Grading Source", 
+        validators = [InputRequired(message = "cannot be blank")])
+
 
     email = StringField("Email", 
         validators = [Optional(), Email()])

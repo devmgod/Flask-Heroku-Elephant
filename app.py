@@ -198,7 +198,6 @@ def comicdetail(id):
 def editcomic(id):
     """ Comic Detail page - should have links to a specific user's comic with all details and option to edit it"""
 
-    form = EditComicsForm()
 
 
     session['current_user']=1
@@ -211,28 +210,30 @@ def editcomic(id):
 
     #query this comic
     comic = Comic.query.get_or_404(id) 
+    form = EditComicsForm(obj=comic) 
 
-    #check authorization
+    #check authorization      
     if comic.owner_id == current_user: 
 
         #form validation
         if form.validate_on_submit(): 
-            owner = form.owner.data
-            comictitle = form.comictitle.data
-            issuenumber = form.issuenumber.data
-            year = form.year.data
-            price = form.price.data
-            publisher = form.publisher.data
-            pedigree = form.pedigree.data
-            location = form.location.data
-            grade = form.grade.data
-            email = form.email.data
-            notes = form.notes.data   
+            comic.comictitle = form.comictitle.data
+            comic.issuenumber = form.issuenumber.data
+            comic.year = form.year.data 
+            comic.price = form.price.data
+            comic.publisher = form.publisher.data
+            comic.pedigree = form.pedigree.data
+            comic.location = form.location.data
+            comic. grade = form.grade.data
+            comic.email = form.email.data
+            comic.notes = form.notes.data  
+            comic.assessed_source = form.assessed_source.data         
 
-            flash(f"Collected {owner} from form")
+            db.session.commit()   
+            flash(f"Collected {comic.owner.fname}'s data from form")
             return redirect("/mystuff")         
 
-        else:
+        else:        
             flash(f"Form not updated")
             return render_template("edit-comic.html", comic=comic, form=form)
 

@@ -57,7 +57,7 @@ class User(db.Model):
 
     def __repr__(self):
             p = self
-            return f"<User id={p.id} username={p.username} fname={p.fname} lname={p.lname} email={p.email} read={p.read} attachments={p.attachments}>"
+            return f"< id={p.id}>"
 
 ############################# ROLES ######################################
 

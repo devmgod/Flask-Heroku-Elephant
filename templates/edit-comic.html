@@ -44,13 +44,6 @@
 
                     <!-- Text input for comic owner -->
                     <div class="form-outline mb-4">
-                        {{form.owner(class='form-control unclickable')}}
-                            {% for error in form.owner.errors %} 
-                            <br>
-                            <small class="form-text text-danger">
-                                {{ error }} 
-                            </small>
-                            {% endfor %} 
 
                         <input
                         value="{{ comic.owner.fname }} {{ comic.owner.lname }}"
@@ -59,13 +52,7 @@
                         name="owner"
                         class="form-control unclickable"
                         autocomplete="off"
-                        style="
-                        background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAUBJREFUOBGVVE2ORUAQLvIS4gwzEysHkHgnkMiEc4zEJXCMNwtWTmDh3UGcYoaFhZUFCzFVnu4wIaiE+vvq6+6qTgthGH6O4/jA7x1OiCAIPwj7CoLgSXDxSjEVzAt9k01CBKdWfsFf/2WNuEwc2YqigKZpK9glAlVVwTTNbQJZlnlCkiTAZnF/mePB2biRdhwHdF2HJEmgaRrwPA+qqoI4jle5/8XkXzrCFoHg+/5ICdpm13UTho7Q9/0WnsfwiL/ouHwHrJgQR8WEwVG+oXpMPaDAkdzvd7AsC8qyhCiKJjiRnCKwbRsMw9hcQ5zv9maSBeu6hjRNYRgGFuKaCNwjkjzPoSiK1d1gDDecQobOBwswzabD/D3Np7AHOIrvNpHmPI+Kc2RZBm3bcp8wuwSIot7QQ0PznoR6wYSK0Xb/AGVLcWwc7Ng3AAAAAElFTkSuQmCC');
-                        background-repeat: no-repeat;
-                        background-attachment: scroll;
-                        background-size: 16px 18px;
-                        background-position: 98% 50%;
-                        "
+                        
                     />
                     <label
                     class="form-label"
@@ -89,10 +76,14 @@
                     <div class="row mb-4">
                         <div class="col">
                             <div class="form-outline">
-                                <!-- ADD THIS PERHAPS?
-                                (class='form-control unclickable')
-                             -->
-                                {{form.comictitle}}
+
+                                <label
+                                    class="form-label"
+                                    for="comictitle"
+                                    style="margin-left: 0px"
+                                    >Title</label>
+
+                                {{ form.comictitle(class_="wtfforms") }}
                                     {% for error in form.owner.errors %} 
                                     <br>
                                     <small class="form-text text-danger">
@@ -100,72 +91,27 @@
                                     </small>
                                     {% endfor %} 
 
-                                <input  type="text" 
-                                id="comictitle" 
-                                name="comictitle" 
-                                value="{{ comic.title }}"
-                                class="form-control"
-                                style="
-                                background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAUBJREFUOBGVVE2ORUAQLvIS4gwzEysHkHgnkMiEc4zEJXCMNwtWTmDh3UGcYoaFhZUFCzFVnu4wIaiE+vvq6+6qTgthGH6O4/jA7x1OiCAIPwj7CoLgSXDxSjEVzAt9k01CBKdWfsFf/2WNuEwc2YqigKZpK9glAlVVwTTNbQJZlnlCkiTAZnF/mePB2biRdhwHdF2HJEmgaRrwPA+qqoI4jle5/8XkXzrCFoHg+/5ICdpm13UTho7Q9/0WnsfwiL/ouHwHrJgQR8WEwVG+oXpMPaDAkdzvd7AsC8qyhCiKJjiRnCKwbRsMw9hcQ5zv9maSBeu6hjRNYRgGFuKaCNwjkjzPoSiK1d1gDDecQobOBwswzabD/D3Np7AHOIrvNpHmPI+Kc2RZBm3bcp8wuwSIot7QQ0PznoR6wYSK0Xb/AGVLcWwc7Ng3AAAAAElFTkSuQmCC');
-                                background-repeat: no-repeat;
-                                background-attachment: scroll;
-                                background-size: 16px 18px;
-                                background-position: 98% 50%;
-                                "
-                    autocomplete="off"
-                                />
-                <label
-                    class="form-label"
-                    for="comictitle"
-                    style="margin-left: 0px"
-                    >Title</label
-                    >
-                    <div class="form-notch">
-                        <div class="form-notch-leading" style="width: 9px">
-                        </div>
-                        <div class="form-notch-middle" style="width: 68.8px"  ></div>
-                        <div class="form-notch-trailing">
-                        </div>
-                    </div>
-                <div class="form-notch">
-                    <div class="form-notch-leading" style="width: 9px"></div>
-                    <div class="form-notch-middle" style="width: 68.8px"></div>
-                    <div class="form-notch-trailing"></div>
-                </div>
+ 
+                    
             </div>
         </div>
         <div class="col">
             <div class="form-outline">
-                <input type="text" 
-                id="issuenumber" 
-                name="issuenumber" 
-                value="{{ comic.issue_num}}"
-                class="form-control" 
-                autocomplete="off"
-                style="
-                    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAUBJREFUOBGVVE2ORUAQLvIS4gwzEysHkHgnkMiEc4zEJXCMNwtWTmDh3UGcYoaFhZUFCzFVnu4wIaiE+vvq6+6qTgthGH6O4/jA7x1OiCAIPwj7CoLgSXDxSjEVzAt9k01CBKdWfsFf/2WNuEwc2YqigKZpK9glAlVVwTTNbQJZlnlCkiTAZnF/mePB2biRdhwHdF2HJEmgaRrwPA+qqoI4jle5/8XkXzrCFoHg+/5ICdpm13UTho7Q9/0WnsfwiL/ouHwHrJgQR8WEwVG+oXpMPaDAkdzvd7AsC8qyhCiKJjiRnCKwbRsMw9hcQ5zv9maSBeu6hjRNYRgGFuKaCNwjkjzPoSiK1d1gDDecQobOBwswzabD/D3Np7AHOIrvNpHmPI+Kc2RZBm3bcp8wuwSIot7QQ0PznoR6wYSK0Xb/AGVLcWwc7Ng3AAAAAElFTkSuQmCC');
-                    background-repeat: no-repeat;
-                    background-attachment: scroll;
-                    background-size: 16px 18px;
-                    background-position: 98% 50%;
-                    "
-                />
+
                 <label
                     class="form-label"
                     for="issuenumber"
                     style="margin-left: 0px"
                     >Issue Number</label
                 >
-                <div class="form-notch">
-                    <div  class="form-notch-leading" style="width: 9px"></div>
-                    <div class="form-notch-middle"  style="width: 68px"></div>
-                    <div class="form-notch-trailing"></div>
-                </div>
-                <div class="form-notch">
-                    <div class="form-notch-leading" style="width: 9px"></div>
-                    <div class="form-notch-middle"  style="width: 68px" ></div>
-                    <div class="form-notch-trailing"></div>
-                </div>
+                {{ form.issuenumber(class_="wtfforms") }}
+                    {% for error in form.issuenumber.errors %} 
+                    <br>
+                    <small class="form-text text-danger">
+                        {{ error }} 
+                    </small>
+                {% endfor %} 
+
             </div>
         </div>
                     </div>
@@ -174,72 +120,40 @@
                     <div class="row mb-4">
                         <div class="col">
                             <div class="form-outline">
-                                <input  type="text" 
-                                id="year" 
-                                name="year"
-                                value="{{ comic.year }}"
-                                class="form-control"
-                                style="
-                                background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAUBJREFUOBGVVE2ORUAQLvIS4gwzEysHkHgnkMiEc4zEJXCMNwtWTmDh3UGcYoaFhZUFCzFVnu4wIaiE+vvq6+6qTgthGH6O4/jA7x1OiCAIPwj7CoLgSXDxSjEVzAt9k01CBKdWfsFf/2WNuEwc2YqigKZpK9glAlVVwTTNbQJZlnlCkiTAZnF/mePB2biRdhwHdF2HJEmgaRrwPA+qqoI4jle5/8XkXzrCFoHg+/5ICdpm13UTho7Q9/0WnsfwiL/ouHwHrJgQR8WEwVG+oXpMPaDAkdzvd7AsC8qyhCiKJjiRnCKwbRsMw9hcQ5zv9maSBeu6hjRNYRgGFuKaCNwjkjzPoSiK1d1gDDecQobOBwswzabD/D3Np7AHOIrvNpHmPI+Kc2RZBm3bcp8wuwSIot7QQ0PznoR6wYSK0Xb/AGVLcWwc7Ng3AAAAAElFTkSuQmCC');
-                                background-repeat: no-repeat;
-                                background-attachment: scroll;
-                                background-size: 16px 18px;
-                                background-position: 98% 50%;
-                                "
-                    autocomplete="off"
-                />
-                <label
-                    class="form-label"
-                    for="year"
-                    style="margin-left: 0px"
-                    >Year</label
-                    >
-                    <div class="form-notch">
-                        <div class="form-notch-leading" style="width: 9px">
-                        </div>
-                        <div class="form-notch-middle" style="width: 68.8px"  ></div>
-                        <div class="form-notch-trailing">
-                        </div>
-                    </div>
-                <div class="form-notch">
-                    <div class="form-notch-leading" style="width: 9px"></div>
-                    <div class="form-notch-middle" style="width: 68.8px"></div>
-                    <div class="form-notch-trailing"></div>
-                </div>
+
+                                <label
+                                class="form-label"
+                                for="year"
+                                style="margin-left: 0px"
+                                >Year</label>
+
+                            {{ form.year(class_="wtfforms") }}
+                                {% for error in form.issuenumber.errors %} 
+                                    <br>
+                                    <small class="form-text text-danger">
+                                    {{ error }} 
+                                    </small>
+                                {% endfor %} 
+                                   
                 </div>
                 </div>
                 <div class="col">
                 <div class="form-outline">
-                <input type="number" 
-                id="price" 
-                name="price"
-                value="{{ comic.assessed_value}}"
-                class="form-control" 
-                autocomplete="off"
-                style="
-                    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAUBJREFUOBGVVE2ORUAQLvIS4gwzEysHkHgnkMiEc4zEJXCMNwtWTmDh3UGcYoaFhZUFCzFVnu4wIaiE+vvq6+6qTgthGH6O4/jA7x1OiCAIPwj7CoLgSXDxSjEVzAt9k01CBKdWfsFf/2WNuEwc2YqigKZpK9glAlVVwTTNbQJZlnlCkiTAZnF/mePB2biRdhwHdF2HJEmgaRrwPA+qqoI4jle5/8XkXzrCFoHg+/5ICdpm13UTho7Q9/0WnsfwiL/ouHwHrJgQR8WEwVG+oXpMPaDAkdzvd7AsC8qyhCiKJjiRnCKwbRsMw9hcQ5zv9maSBeu6hjRNYRgGFuKaCNwjkjzPoSiK1d1gDDecQobOBwswzabD/D3Np7AHOIrvNpHmPI+Kc2RZBm3bcp8wuwSIot7QQ0PznoR6wYSK0Xb/AGVLcWwc7Ng3AAAAAElFTkSuQmCC');
-                    background-repeat: no-repeat;
-                    background-attachment: scroll;
-                    background-size: 16px 18px;
-                    background-position: 98% 50%;
-                    "
-                />
+               
                 <label
                     class="form-label"
                     for="price"
                     style="margin-left: 0px"
-                    >Price</label
-                >
-                <div class="form-notch">
-                    <div  class="form-notch-leading" style="width: 9px"></div>
-                    <div class="form-notch-middle"  style="width: 68px"></div>
-                    <div class="form-notch-trailing"></div>
-                </div>
-                <div class="form-notch">
-                    <div class="form-notch-leading" style="width: 9px"></div>
-                    <div class="form-notch-middle"  style="width: 68px" ></div>
-                    <div class="form-notch-trailing"></div>
-                </div>
+                    >Price</label>
+
+                    {{ form.price(class_="wtfforms") }}
+                    {% for error in form.issuenumber.errors %} 
+                        <br>
+                        <small class="form-text text-danger">
+                        {{ error }} 
+                        </small>
+                    {% endfor %} 
+
                 </div>
                 </div>
                     </div>
@@ -248,144 +162,86 @@
                     <div class="row mb-4">
                         <div class="col">
                             <div class="form-outline">
-                                <input  type="text" 
-                                id="publisher" 
-                                name="publisher" 
-                                value="{{ comic.publisher }}"
-                                class="form-control"
-                                style="
-                                background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAUBJREFUOBGVVE2ORUAQLvIS4gwzEysHkHgnkMiEc4zEJXCMNwtWTmDh3UGcYoaFhZUFCzFVnu4wIaiE+vvq6+6qTgthGH6O4/jA7x1OiCAIPwj7CoLgSXDxSjEVzAt9k01CBKdWfsFf/2WNuEwc2YqigKZpK9glAlVVwTTNbQJZlnlCkiTAZnF/mePB2biRdhwHdF2HJEmgaRrwPA+qqoI4jle5/8XkXzrCFoHg+/5ICdpm13UTho7Q9/0WnsfwiL/ouHwHrJgQR8WEwVG+oXpMPaDAkdzvd7AsC8qyhCiKJjiRnCKwbRsMw9hcQ5zv9maSBeu6hjRNYRgGFuKaCNwjkjzPoSiK1d1gDDecQobOBwswzabD/D3Np7AHOIrvNpHmPI+Kc2RZBm3bcp8wuwSIot7QQ0PznoR6wYSK0Xb/AGVLcWwc7Ng3AAAAAElFTkSuQmCC');
-                                background-repeat: no-repeat;
-                                background-attachment: scroll;
-                                background-size: 16px 18px;
-                                background-position: 98% 50%;
-                                "
-                    autocomplete="off"
-                />
+
                 <label
                     class="form-label"
                     for="publisher"
                     style="margin-left: 0px"
                     >Publisher</label
                     >
-                    <div class="form-notch">
-                        <div class="form-notch-leading" style="width: 9px">
-                        </div>
-                        <div class="form-notch-middle" style="width: 68.8px"  ></div>
-                        <div class="form-notch-trailing">
-                        </div>
-                    </div>
-                <div class="form-notch">
-                    <div class="form-notch-leading" style="width: 9px"></div>
-                    <div class="form-notch-middle" style="width: 68.8px"></div>
-                    <div class="form-notch-trailing"></div>
-                </div>
+
+                    {{ form.publisher(class_="wtfforms") }}
+                                {% for error in form.issuenumber.errors %} 
+                                    <br>
+                                    <small class="form-text text-danger">
+                                    {{ error }} 
+                                    </small>
+                                {% endfor %} 
+
+
                 </div>
                 </div>
                 <div class="col">
                 <div class="form-outline">
-                <input type="text" 
-                id="pedigree" 
-                name="pedigree" 
-                value="{{ comic.pedigree }}"
-                class="form-control" 
-                autocomplete="off"
-                style="
-                    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAUBJREFUOBGVVE2ORUAQLvIS4gwzEysHkHgnkMiEc4zEJXCMNwtWTmDh3UGcYoaFhZUFCzFVnu4wIaiE+vvq6+6qTgthGH6O4/jA7x1OiCAIPwj7CoLgSXDxSjEVzAt9k01CBKdWfsFf/2WNuEwc2YqigKZpK9glAlVVwTTNbQJZlnlCkiTAZnF/mePB2biRdhwHdF2HJEmgaRrwPA+qqoI4jle5/8XkXzrCFoHg+/5ICdpm13UTho7Q9/0WnsfwiL/ouHwHrJgQR8WEwVG+oXpMPaDAkdzvd7AsC8qyhCiKJjiRnCKwbRsMw9hcQ5zv9maSBeu6hjRNYRgGFuKaCNwjkjzPoSiK1d1gDDecQobOBwswzabD/D3Np7AHOIrvNpHmPI+Kc2RZBm3bcp8wuwSIot7QQ0PznoR6wYSK0Xb/AGVLcWwc7Ng3AAAAAElFTkSuQmCC');
-                    background-repeat: no-repeat;
-                    background-attachment: scroll;
-                    background-size: 16px 18px;
-                    background-position: 98% 50%;
-                    "
-                />
+
+
                 <label
                     class="form-label"
                     for="pedigree"
                     style="margin-left: 0px"
-                    >Pedigree</label
-                >
-                <div class="form-notch">
-                    <div  class="form-notch-leading" style="width: 9px"></div>
-                    <div class="form-notch-middle"  style="width: 68px"></div>
-                    <div class="form-notch-trailing"></div>
-                </div>
-                <div class="form-notch">
-                    <div class="form-notch-leading" style="width: 9px"></div>
-                    <div class="form-notch-middle"  style="width: 68px" ></div>
-                    <div class="form-notch-trailing"></div>
-                </div>
+                    >Pedigree</label>
+
+                    {{ form.pedigree(class_="wtfforms") }}
+                    {% for error in form.issuenumber.errors %} 
+                        <br>
+                        <small class="form-text text-danger">
+                        {{ error }} 
+                        </small>
+                    {% endfor %} 
+
                 </div>
                 </div>
                     </div>
+
 
                     <!-- 2 col grid layout with text inputs for source & grade -->
                     <div class="row mb-4">
                         <div class="col">
                             <div class="form-outline">
-                                <input  type="text" 
-                                id="source" 
-                                name="source"
-                                class="form-control" 
-                                value="{{ comic.assessed_source }}"
-                                style="
-                                background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAUBJREFUOBGVVE2ORUAQLvIS4gwzEysHkHgnkMiEc4zEJXCMNwtWTmDh3UGcYoaFhZUFCzFVnu4wIaiE+vvq6+6qTgthGH6O4/jA7x1OiCAIPwj7CoLgSXDxSjEVzAt9k01CBKdWfsFf/2WNuEwc2YqigKZpK9glAlVVwTTNbQJZlnlCkiTAZnF/mePB2biRdhwHdF2HJEmgaRrwPA+qqoI4jle5/8XkXzrCFoHg+/5ICdpm13UTho7Q9/0WnsfwiL/ouHwHrJgQR8WEwVG+oXpMPaDAkdzvd7AsC8qyhCiKJjiRnCKwbRsMw9hcQ5zv9maSBeu6hjRNYRgGFuKaCNwjkjzPoSiK1d1gDDecQobOBwswzabD/D3Np7AHOIrvNpHmPI+Kc2RZBm3bcp8wuwSIot7QQ0PznoR6wYSK0Xb/AGVLcWwc7Ng3AAAAAElFTkSuQmCC');
-                                background-repeat: no-repeat;
-                                background-attachment: scroll;
-                                background-size: 16px 18px;
-                                background-position: 98% 50%;
-                                "
-                    autocomplete="off"
-                />
+
+
                 <label
-                    class="form-label" for="source" style="margin-left: 0px"
-                    >Grading Source</label
-                    >
-                    <div class="form-notch">
-                        <div class="form-notch-leading" style="width: 9px">
-                        </div>
-                        <div class="form-notch-middle" style="width: 68.8px"  ></div>
-                        <div class="form-notch-trailing">
-                        </div>
-                    </div>
-                <div class="form-notch">
-                    <div class="form-notch-leading" style="width: 9px"></div>
-                    <div class="form-notch-middle" style="width: 68.8px"></div>
-                    <div class="form-notch-trailing"></div>
-                </div>
+                    class="form-label" for="assessed_source" style="margin-left: 0px"
+                    >Grading Source</label>
+
+                    {{ form.assessed_source(class_="wtfforms") }}
+                        {% for error in form.issuenumber.errors %} 
+                            <br>
+                            <small class="form-text text-danger">
+                            {{ error }} 
+                            </small>
+                        {% endfor %} 
+
                 </div>
                 </div>
                 <div class="col">
                 <div class="form-outline">
-                <input type="number" 
-                id="grade" 
-                name="grade" 
-                value="{{ comic.cgc_grade }}"
-                class="form-control" 
-                autocomplete="off"
-                style="
-                    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAUBJREFUOBGVVE2ORUAQLvIS4gwzEysHkHgnkMiEc4zEJXCMNwtWTmDh3UGcYoaFhZUFCzFVnu4wIaiE+vvq6+6qTgthGH6O4/jA7x1OiCAIPwj7CoLgSXDxSjEVzAt9k01CBKdWfsFf/2WNuEwc2YqigKZpK9glAlVVwTTNbQJZlnlCkiTAZnF/mePB2biRdhwHdF2HJEmgaRrwPA+qqoI4jle5/8XkXzrCFoHg+/5ICdpm13UTho7Q9/0WnsfwiL/ouHwHrJgQR8WEwVG+oXpMPaDAkdzvd7AsC8qyhCiKJjiRnCKwbRsMw9hcQ5zv9maSBeu6hjRNYRgGFuKaCNwjkjzPoSiK1d1gDDecQobOBwswzabD/D3Np7AHOIrvNpHmPI+Kc2RZBm3bcp8wuwSIot7QQ0PznoR6wYSK0Xb/AGVLcWwc7Ng3AAAAAElFTkSuQmCC');
-                    background-repeat: no-repeat;
-                    background-attachment: scroll;
-                    background-size: 16px 18px;
-                    background-position: 98% 50%;
-                    "
-                />
+
+
                 <label
                     class="form-label"
                     for="grade"
                     style="margin-left: 0px"
-                    >Grade</label
-                >
-                <div class="form-notch">
-                    <div  class="form-notch-leading" style="width: 9px"></div>
-                    <div class="form-notch-middle"  style="width: 68px"></div>
-                    <div class="form-notch-trailing"></div>
-                </div>
-                <div class="form-notch">
-                    <div class="form-notch-leading" style="width: 9px"></div>
-                    <div class="form-notch-middle"  style="width: 68px" ></div>
-                    <div class="form-notch-trailing"></div>
-                </div>
+                    >Grade</label>
+
+                    {{ form.grade(class_="wtfforms") }}
+                        {% for error in form.issuenumber.errors %} 
+                            <br>
+                            <small class="form-text text-danger">
+                            {{ error }} 
+                            </small>
+                        {% endfor %} 
+
                 </div>
                 </div>
                     </div>
@@ -521,41 +377,22 @@
             
                     <!-- Message input -->
                     <div class="form-outline mb-4">
-                        <textarea
-                        class="form-control"
-                        id="notes"
-                        name="notes"
-                        value="{{ comic.notes }}"
-                        rows="4"
-                        ></textarea>
+
                         <label
                         class="form-label"
                         for="notes"
                         style="margin-left: 0px"
-                        >Additional information</label
-                        >
-                        <div class="form-notch">
-                            <div
-                            class="form-notch-leading"
-                            style="width: 9px"
-                            ></div>
-                            <div
-                            class="form-notch-middle"
-                            style="width: 131.2px"
-                            ></div>
-                            <div class="form-notch-trailing"></div>
-                        </div>
-                        <div class="form-notch">
-                            <div
-                            class="form-notch-leading"
-                            style="width: 9px"
-                            ></div>
-                            <div
-                            class="form-notch-middle"
-                            style="width: 131.2px"
-                            ></div>
-                            <div class="form-notch-trailing"></div>
-                        </div>
+                        >Additional information</label >
+                        
+                        {{ form.notes(class_="wtfforms") }}
+                        {% for error in form.issuenumber.errors %} 
+                            <br>
+                            <small class="form-text text-danger">
+                            {{ error }} 
+                            </small>
+                        {% endfor %} 
+                        
+   
                     </div>
             
                     <!-- Checkbox -->
