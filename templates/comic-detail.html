@@ -53,7 +53,9 @@
         <div class="col-9 mb-4">
             <!--Section: Comic Detail form-->
             <section class="shadow-5 p-4">
-                <form class="unclickable">
+                <form  action="/editcomic/{{ comic.id }}">
+
+                    <div class="unclickable">                       
 
                     <!-- Text input for comic owner -->
                     <div class="form-outline mb-4">
@@ -274,41 +276,41 @@
                     <div class="form-notch-middle" style="width: 68.8px"></div>
                     <div class="form-notch-trailing"></div>
                 </div>
-                </div>
-                </div>
+                            </div>
+                        </div>
                 <div class="col">
-                <div class="form-outline">
-                <input type="text" 
-                id="pedigree" 
-                name="pedigree" 
-                value="{{ comic.pedigree }}"
-                class="form-control" 
-                autocomplete="off"
-                style="
-                    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAUBJREFUOBGVVE2ORUAQLvIS4gwzEysHkHgnkMiEc4zEJXCMNwtWTmDh3UGcYoaFhZUFCzFVnu4wIaiE+vvq6+6qTgthGH6O4/jA7x1OiCAIPwj7CoLgSXDxSjEVzAt9k01CBKdWfsFf/2WNuEwc2YqigKZpK9glAlVVwTTNbQJZlnlCkiTAZnF/mePB2biRdhwHdF2HJEmgaRrwPA+qqoI4jle5/8XkXzrCFoHg+/5ICdpm13UTho7Q9/0WnsfwiL/ouHwHrJgQR8WEwVG+oXpMPaDAkdzvd7AsC8qyhCiKJjiRnCKwbRsMw9hcQ5zv9maSBeu6hjRNYRgGFuKaCNwjkjzPoSiK1d1gDDecQobOBwswzabD/D3Np7AHOIrvNpHmPI+Kc2RZBm3bcp8wuwSIot7QQ0PznoR6wYSK0Xb/AGVLcWwc7Ng3AAAAAElFTkSuQmCC');
-                    background-repeat: no-repeat;
-                    background-attachment: scroll;
-                    background-size: 16px 18px;
-                    background-position: 98% 50%;
-                    "
-                />
-                <label
-                    class="form-label"
-                    for="pedigree"
-                    style="margin-left: 0px"
-                    >Pedigree</label
-                >
-                <div class="form-notch">
-                    <div  class="form-notch-leading" style="width: 9px"></div>
-                    <div class="form-notch-middle"  style="width: 68px"></div>
-                    <div class="form-notch-trailing"></div>
-                </div>
-                <div class="form-notch">
-                    <div class="form-notch-leading" style="width: 9px"></div>
-                    <div class="form-notch-middle"  style="width: 68px" ></div>
-                    <div class="form-notch-trailing"></div>
-                </div>
-                </div>
+                    <div class="form-outline">
+                        <input type="text" 
+                        id="pedigree" 
+                        name="pedigree" 
+                        value="{{ comic.pedigree }}"
+                        class="form-control" 
+                        autocomplete="off"
+                        style="
+                            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAUBJREFUOBGVVE2ORUAQLvIS4gwzEysHkHgnkMiEc4zEJXCMNwtWTmDh3UGcYoaFhZUFCzFVnu4wIaiE+vvq6+6qTgthGH6O4/jA7x1OiCAIPwj7CoLgSXDxSjEVzAt9k01CBKdWfsFf/2WNuEwc2YqigKZpK9glAlVVwTTNbQJZlnlCkiTAZnF/mePB2biRdhwHdF2HJEmgaRrwPA+qqoI4jle5/8XkXzrCFoHg+/5ICdpm13UTho7Q9/0WnsfwiL/ouHwHrJgQR8WEwVG+oXpMPaDAkdzvd7AsC8qyhCiKJjiRnCKwbRsMw9hcQ5zv9maSBeu6hjRNYRgGFuKaCNwjkjzPoSiK1d1gDDecQobOBwswzabD/D3Np7AHOIrvNpHmPI+Kc2RZBm3bcp8wuwSIot7QQ0PznoR6wYSK0Xb/AGVLcWwc7Ng3AAAAAElFTkSuQmCC');
+                            background-repeat: no-repeat;
+                            background-attachment: scroll;
+                            background-size: 16px 18px;
+                            background-position: 98% 50%;
+                            "
+                        />
+                        <label
+                            class="form-label"
+                            for="pedigree"
+                            style="margin-left: 0px"
+                            >Pedigree</label
+                        >
+                        <div class="form-notch">
+                            <div  class="form-notch-leading" style="width: 9px"></div>
+                            <div class="form-notch-middle"  style="width: 68px"></div>
+                            <div class="form-notch-trailing"></div>
+                        </div>
+                        <div class="form-notch">
+                        <div class="form-notch-leading" style="width: 9px"></div>
+                        <div class="form-notch-middle"  style="width: 68px" ></div>
+                        <div class="form-notch-trailing"></div>
+                        </div>
+                    </div>
                 </div>
                     </div>
 
@@ -345,42 +347,42 @@
                     <div class="form-notch-middle" style="width: 68.8px"></div>
                     <div class="form-notch-trailing"></div>
                 </div>
-                </div>
-                </div>
-                <div class="col">
-                <div class="form-outline">
-                <input type="number" 
-                id="grade" 
-                name="grade" 
-                value="{{ comic.cgc_grade }}"
-                class="form-control" 
-                autocomplete="off"
-                style="
-                    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAUBJREFUOBGVVE2ORUAQLvIS4gwzEysHkHgnkMiEc4zEJXCMNwtWTmDh3UGcYoaFhZUFCzFVnu4wIaiE+vvq6+6qTgthGH6O4/jA7x1OiCAIPwj7CoLgSXDxSjEVzAt9k01CBKdWfsFf/2WNuEwc2YqigKZpK9glAlVVwTTNbQJZlnlCkiTAZnF/mePB2biRdhwHdF2HJEmgaRrwPA+qqoI4jle5/8XkXzrCFoHg+/5ICdpm13UTho7Q9/0WnsfwiL/ouHwHrJgQR8WEwVG+oXpMPaDAkdzvd7AsC8qyhCiKJjiRnCKwbRsMw9hcQ5zv9maSBeu6hjRNYRgGFuKaCNwjkjzPoSiK1d1gDDecQobOBwswzabD/D3Np7AHOIrvNpHmPI+Kc2RZBm3bcp8wuwSIot7QQ0PznoR6wYSK0Xb/AGVLcWwc7Ng3AAAAAElFTkSuQmCC');
-                    background-repeat: no-repeat;
-                    background-attachment: scroll;
-                    background-size: 16px 18px;
-                    background-position: 98% 50%;
-                    "
-                />
-                <label
-                    class="form-label"
-                    for="grade"
-                    style="margin-left: 0px"
-                    >Grade</label
-                >
-                <div class="form-notch">
-                    <div  class="form-notch-leading" style="width: 9px"></div>
-                    <div class="form-notch-middle"  style="width: 68px"></div>
-                    <div class="form-notch-trailing"></div>
-                </div>
-                <div class="form-notch">
-                    <div class="form-notch-leading" style="width: 9px"></div>
-                    <div class="form-notch-middle"  style="width: 68px" ></div>
-                    <div class="form-notch-trailing"></div>
-                </div>
-                </div>
-                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-outline">
+                            <input type="number" 
+                            id="grade" 
+                            name="grade" 
+                            value="{{ comic.cgc_grade }}"
+                            class="form-control" 
+                            autocomplete="off"
+                            style="
+                                background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAUBJREFUOBGVVE2ORUAQLvIS4gwzEysHkHgnkMiEc4zEJXCMNwtWTmDh3UGcYoaFhZUFCzFVnu4wIaiE+vvq6+6qTgthGH6O4/jA7x1OiCAIPwj7CoLgSXDxSjEVzAt9k01CBKdWfsFf/2WNuEwc2YqigKZpK9glAlVVwTTNbQJZlnlCkiTAZnF/mePB2biRdhwHdF2HJEmgaRrwPA+qqoI4jle5/8XkXzrCFoHg+/5ICdpm13UTho7Q9/0WnsfwiL/ouHwHrJgQR8WEwVG+oXpMPaDAkdzvd7AsC8qyhCiKJjiRnCKwbRsMw9hcQ5zv9maSBeu6hjRNYRgGFuKaCNwjkjzPoSiK1d1gDDecQobOBwswzabD/D3Np7AHOIrvNpHmPI+Kc2RZBm3bcp8wuwSIot7QQ0PznoR6wYSK0Xb/AGVLcWwc7Ng3AAAAAElFTkSuQmCC');
+                                background-repeat: no-repeat;
+                                background-attachment: scroll;
+                                background-size: 16px 18px;
+                                background-position: 98% 50%;
+                                "
+                            />
+                            <label
+                                class="form-label"
+                                for="grade"
+                                style="margin-left: 0px"
+                                >Grade</label
+                            >
+                            <div class="form-notch">
+                                <div  class="form-notch-leading" style="width: 9px"></div>
+                                <div class="form-notch-middle"  style="width: 68px"></div>
+                                <div class="form-notch-trailing"></div>
+                            </div>
+                            <div class="form-notch">
+                                <div class="form-notch-leading" style="width: 9px"></div>
+                                <div class="form-notch-middle"  style="width: 68px" ></div>
+                                <div class="form-notch-trailing"></div>
+                            </div>
+                            </div>
+                        </div>
                     </div>
     
             
@@ -564,8 +566,13 @@
                             Create an account?
                         </label>
                     </div> -->
-            
- 
+                    
+                    </div>
+                    <div class="col-12 pt-2 pb-2 d-flex justify-content-center">
+                        <input type="submit" class="btn btn-outline-primary {{ user_flags.editable }}" data-mdb-ripple-color="dark" 
+                        value="EDIT THIS COMIC"
+                        >
+                    </div>
 
                 </form>
 

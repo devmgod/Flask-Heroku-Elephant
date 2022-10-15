@@ -142,7 +142,7 @@ def mystuff():
     #query all comics EXCEPT this user
     mycomics = Comic.query.filter(Comic.owner_id == current_user)
 
-    return render_template("mystuff.html", mycomics=mycomics)
+    return render_template("mystuff.html", mycomics=mycomics) 
 
 
 
@@ -152,7 +152,7 @@ def comicdetail(id):
     supply css descriptors to show or hide buttons under comic
     .invisible to not display
     .unclickable to not be able to click
-
+    get here from /mystuff
     """
 
     session['current_user']=1
@@ -165,11 +165,13 @@ def comicdetail(id):
 
 
     # TODO: consider doing this with a template instead?
-    #Decide which buttons to show depending on whether this is a current user's comic
+    """These classes are passed in through Jinja as classes into the html to indicate which buttons to show depending on whether this is a current user's comic
+    """
     msg_class= ""
     ofr_trade= ""
     ofr_accept = ""
     have_mailed = ""
+    editable = ""
 
     if comic.owner_id == current_user:
         msg_class = "invisible"
@@ -179,12 +181,14 @@ def comicdetail(id):
     else:
         ofr_accept = "invisible"
         have_mailed = "invisible"
+        editable = "invisible"       
 
     user_flags = {
         "msg_class":msg_class,
         "ofr_trade":ofr_trade,
         "ofr_accept":ofr_accept,
-        "have_mailed":have_mailed}
+        "have_mailed":have_mailed,
+        "editable": editable}  
 
     return render_template("comic-detail.html", comic=comic, user_flags=user_flags )
 
@@ -214,15 +218,12 @@ def editcomic(id):
         #form validation
         if form.validate_on_submit():
             name = form.name.data
-        price = form.price.data
-        flash(f"Added {name} at {price}")
-        return redirect("/add")
+            flash(f"Collected {name} from form")
+            return redirect("/mystuff")
 
-    else:
-        return render_template(
-            "snack_add_form.html", form=form)
-
-        return render_template("edit-comic.html", comic=comic)
+        else:
+            flash(f"Form not updated")
+            return render_template("edit-comic.html", comic=comic, form=form)
 
 
 

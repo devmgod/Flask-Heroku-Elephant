@@ -39,7 +39,7 @@
         <div class="col-9 mb-4">
             <!--Section: Comic Detail form-->
             <section class="shadow-5 p-4">
-                <form class="">
+                <form class="" action="/editcomic/{{ comic.id }}" method="post">
 
                     <!-- Text input for comic owner -->
                     <div class="form-outline mb-4">
@@ -552,7 +552,11 @@
                         </label>
                     </div> -->
             
- 
+                    <div class="col-12 pt-2 pb-2 d-flex justify-content-center">
+                        <input type="submit" class="btn btn-outline-primary" data-mdb-ripple-color="dark" 
+                        value="UPDATE"
+                        >
+                    </div>
 
                 </form>
 

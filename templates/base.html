@@ -166,8 +166,8 @@
   <!-- FLASH -->
   
   {% for msg in get_flashed_messages() %}
-  <div class="d-flex justify-content-center">
-    <!-- Success toast -->
+  <!-- Success toast -->
+  <!-- <div class="d-flex justify-content-center">
     <div
       class="toast fade show bg-success text-white"
       role="alert"
@@ -187,7 +187,10 @@
         
       </div>
     </div>
-  </div>
+  </div> -->
+ 
+  <div class="alert alert-info">{{ msg }}</div>
+
   {% endfor %}
 
   <!-- endflash -->
