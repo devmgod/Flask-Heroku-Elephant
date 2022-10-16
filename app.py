@@ -233,7 +233,7 @@ def editcomic(id):
             flash(f"Comic details updated for { comic.title } # {comic.issuenumber } ")
             return redirect(f"/comicdetail/{comic.id}")         
 
-        else:                  
+        else:                   
             flash(f"Form not updated")
             return render_template("edit-comic.html", comic=comic, form=form)
 

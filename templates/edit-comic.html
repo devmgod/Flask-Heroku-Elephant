@@ -84,7 +84,7 @@
                                     >Title</label>
 
                                 {{ form.title(class_="wtfforms") }}
-                                    {% for error in form.owner.errors %} 
+                                    {% for error in form.title.errors %} 
                                     <br>
                                     <small class="form-text text-danger">
                                         {{ error }} 
@@ -128,7 +128,7 @@
                                 >Year</label>
 
                             {{ form.year(class_="wtfforms") }}
-                                {% for error in form.issuenumber.errors %} 
+                                {% for error in form.year.errors %} 
                                     <br>
                                     <small class="form-text text-danger">
                                     {{ error }} 
@@ -147,7 +147,7 @@
                     >Price</label>
 
                     {{ form.price(class_="wtfforms") }}
-                    {% for error in form.issuenumber.errors %} 
+                    {% for error in form.price.errors %} 
                         <br>
                         <small class="form-text text-danger">
                         {{ error }} 
@@ -171,7 +171,7 @@
                     >
 
                     {{ form.publisher(class_="wtfforms") }}
-                                {% for error in form.issuenumber.errors %} 
+                                {% for error in form.publisher.errors %} 
                                     <br>
                                     <small class="form-text text-danger">
                                     {{ error }} 
@@ -192,7 +192,7 @@
                     >Pedigree</label>
 
                     {{ form.pedigree(class_="wtfforms") }}
-                    {% for error in form.issuenumber.errors %} 
+                    {% for error in form.pedigree.errors %} 
                         <br>
                         <small class="form-text text-danger">
                         {{ error }} 
@@ -215,7 +215,7 @@
                     >Grading Source</label>
 
                     {{ form.assessed_source(class_="wtfforms") }}
-                        {% for error in form.issuenumber.errors %} 
+                        {% for error in form.assessed_source.errors %} 
                             <br>
                             <small class="form-text text-danger">
                             {{ error }} 
@@ -235,7 +235,7 @@
                     >Grade</label>
 
                     {{ form.grade(class_="wtfforms") }}
-                        {% for error in form.issuenumber.errors %} 
+                        {% for error in form.grade.errors %} 
                             <br>
                             <small class="form-text text-danger">
                             {{ error }} 
@@ -385,7 +385,7 @@
                         >Additional information</label >
                         
                         {{ form.notes(class_="wtfforms") }}
-                        {% for error in form.issuenumber.errors %} 
+                        {% for error in form.notes.errors %} 
                             <br>
                             <small class="form-text text-danger">
                             {{ error }} 
