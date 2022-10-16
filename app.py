@@ -162,7 +162,7 @@ def comicdetail(id):
 
     #query this comic
     comic = Comic.query.get_or_404(id)
-
+         
 
     # TODO: consider doing this with a template instead?
     """These classes are passed in through Jinja as classes into the html to indicate which buttons to show depending on whether this is a current user's comic
@@ -230,11 +230,11 @@ def editcomic(id):
             comic.assessed_source = form.assessed_source.data         
 
             db.session.commit()   
+            
             flash(f"Comic details updated for { comic.title } # {comic.issuenumber } ")
             return redirect(f"/comicdetail/{comic.id}")         
 
         else:                   
-            flash(f"Form not updated")
             return render_template("edit-comic.html", comic=comic, form=form)
 
 
