@@ -7,7 +7,7 @@ class EditComicsForm(FlaskForm):
     owner = StringField("Owner's Name", 
         validators = [InputRequired(message = "cannot be blank")])
 
-    comictitle = StringField("Title of Comic", 
+    title = StringField("Title of Comic", 
         validators = [InputRequired(message = "cannot be blank")])
 
 

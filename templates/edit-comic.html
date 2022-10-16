@@ -19,7 +19,7 @@
     <h1>Comic Detail</h1>
     <div class="row">
         <div class="col-3 mb-4">
-        <img src="{{ comic.thumbnail }}"></img>
+        <img src="{{ comic.thumbnail }}" style="max-width: 250px; height: auto;"></img>
         <div class="row ">
 
             <div class="col-12 pt-2 pb-2 d-flex justify-content-center">
@@ -79,11 +79,11 @@
 
                                 <label
                                     class="form-label"
-                                    for="comictitle"
+                                    for="title"
                                     style="margin-left: 0px"
                                     >Title</label>
 
-                                {{ form.comictitle(class_="wtfforms") }}
+                                {{ form.title(class_="wtfforms") }}
                                     {% for error in form.owner.errors %} 
                                     <br>
                                     <small class="form-text text-danger">

@@ -217,7 +217,7 @@ def editcomic(id):
 
         #form validation
         if form.validate_on_submit(): 
-            comic.comictitle = form.comictitle.data
+            comic.title = form.title.data
             comic.issuenumber = form.issuenumber.data
             comic.year = form.year.data 
             comic.price = form.price.data
@@ -230,10 +230,10 @@ def editcomic(id):
             comic.assessed_source = form.assessed_source.data         
 
             db.session.commit()   
-            flash(f"Collected {comic.owner.fname}'s data from form")
-            return redirect("/mystuff")         
+            flash(f"Comic details updated for { comic.title } # {comic.issuenumber } ")
+            return redirect(f"/comicdetail/{comic.id}")         
 
-        else:        
+        else:                  
             flash(f"Form not updated")
             return render_template("edit-comic.html", comic=comic, form=form)
 
