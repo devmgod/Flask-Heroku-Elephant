@@ -81,12 +81,12 @@ class Comic(db.Model):
     title = db.Column(db.String(50),
     nullable=False)
 
-    issue_num = db.Column(db.Integer,
-    nullable = False)
+    issuenumber = db.Column(db.Integer,
+    nullable = False) 
 
-    cgc_grade = db.Column(db.Float)
+    grade = db.Column(db.Float)
 
-    assessed_value = db.Column(db.Float)
+    price = db.Column(db.Float)
 
     assessed_source = db.Column(db.String(50), default="CGC")
 

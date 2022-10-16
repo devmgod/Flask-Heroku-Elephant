@@ -215,7 +215,7 @@ def editcomic(id):
     #check authorization      
     if comic.owner_id == current_user: 
 
-        #form validation
+        #form validation 
         if form.validate_on_submit(): 
             comic.title = form.title.data
             comic.issuenumber = form.issuenumber.data
