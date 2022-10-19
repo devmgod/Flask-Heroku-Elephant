@@ -54,3 +54,17 @@ class EditComicsForm(FlaskForm):
 
     # dept_code = SelectField("Department Code")
     # choice-tuples added later from postgresql
+
+
+class SubscriptionForm(FlaskForm):
+    
+    username = StringField("User Name", 
+        validators = [InputRequired(message = "cannot be blank")])
+    
+    email = StringField("Email", 
+        validators = [Optional(), Email()])
+
+    password = StringField("Password", 
+        validators = [InputRequired(message = "cannot be blank")])
+
+    

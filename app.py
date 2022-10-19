@@ -11,7 +11,7 @@ from os import getenv
 # from flowershop import *
 import pdb
 
-from forms import EditComicsForm
+from forms import EditComicsForm, SubscriptionForm
 # from date_and_time_functions import *
 
 # from CRUD_psql import * 
@@ -215,7 +215,7 @@ def editcomic(id):
     #check authorization      
     if comic.owner_id == current_user: 
 
-        #form validation 
+        #form validation  
         if form.validate_on_submit(): 
             comic.title = form.title.data
             comic.issuenumber = form.issuenumber.data
@@ -386,6 +386,22 @@ def deletemsg():
 def subscribe():
     """ write an email page - should show form to create an e-mail and send"""
  
+# Set up email WTForm validation (route, Model, SubscriptionForm, subscribe.html)
+
+#Client clicks 'subscribe' on button only index.html  
+# goes to subscribe.html -> form takes username, e-mail, password (twice) POSTs to /addUser route
+# /addUser route 
+    # does form validation
+        # if valid
+            # create password
+            # add user/password to db through sqlalchemy
+            # e-mail welcome note - API to Mailchimp?
+            # 
+        # else throw error?  
+    # flashes "welcome" and goes to search/main books page
+
+
+
     return render_template("subscribe.html")
 
 ########################### TRADING #########################################
