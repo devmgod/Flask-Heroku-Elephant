@@ -31,7 +31,8 @@ app=Flask(__name__)
 
 
 # original local postgresql db
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql:///comicswap2'
+
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:1@localhost:5432/comicswap2'
 
 #secure variables
 #At ElephantSQL
@@ -53,7 +54,6 @@ app.config['SECRET_KEY'] = API_SECRET_KEY
 app.config['DEBUG_TB_INTERCEPT_REDIRECTS'] = False
 
 # debug = DebugToolbarExtension(app)
-
 connect_db(app)
 
 
