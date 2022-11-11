@@ -1,0 +1,31 @@
+https://github.com/Larry-Volz/theComicSwap_elephantSQL_and_flask_version
+
+https://larry-volz.com/
+
+
+psql -U postgres  
+\l  //show databases
+\c comicswap2  //enter this database
+
+\dt //show relations
+\q  //exit
+
+CREATE DATABASE comicswap2;   // create database
+DROP DATABASE comicswap2  // delete database
+
+
+flask run
+flask db 
+flask shell 
+flask routes
+
+# Create all tables
+with app.app_context():   //database connection with context neccessary
+    db.drop_all()
+    db.create_all()
+
+psql -U postgres -d dvdrental //In this command, the -d flag means database. In this command, you connect to the dvdrental database using the postgres user.
+
+ flask run -h localhost -p 80
+
+you need to buy a domain for integration your project to heroku
