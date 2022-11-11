@@ -192,6 +192,22 @@ class Comics_offers(db.Model):
 ############################# PEDIGREES ###############################
 # actually - can just set up a drop-down where needed and make this an updatable db later as an option
 
+class Pedigree(db.Model):
+    __tablename__ = "pedigrees"
+
+    # relation id
+    id = db.Column(db.Integer,
+    primary_key = True,
+    autoincrement = True)
+
+    title = db.Column(db.String(50))
+
+    description = db.Column(db.String(1000))
+
+    media = db.Column(db.String(150))
+
+
+
 
 ############################# ROLES ######################################
 

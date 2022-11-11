@@ -1,6 +1,6 @@
 """Seed file to make sample data for comicswap2 db."""
 
-from models import db, Msg, User, Comic, Offer, Deal
+from models import db, Msg, User, Comic, Offer, Deal, Pedigree
 # import Comics-offers
 from app import app
 
@@ -77,6 +77,8 @@ db.session.add(ofr1)
 db.session.add(ofr2)
 db.session.add(ofr3)
 
+db.session.commit()
+
 
  ############################# comics-offers ##############################
 #  TODO: For future development - so people can trade more than one comic at a time
@@ -130,4 +132,21 @@ db.session.add(deal1)
 # db.session.add(deal3)
 
 # Commit--otherwise, this never gets saved!
+db.session.commit()
+
+
+############################### PEDIGREES ####################################
+# If table isn't empty, empty it
+Pedigree.query.delete()
+
+# Add offers
+ped1 = Pedigree(title="Allentown", description="Purchased by Jim Payette and Stephen Fishler in 1987, the Allentowns only numbered 135 comics, but contained some of the highest graded copies of several key issues such as Detective Comics #27, Marvel Comics #1, Captain America #1 and Batman #1. The original owner had discovered his mother had saved his small collection when he found them in her closet. His acquaintance, a local antique dealer contacted six comic book dealers to place bids, with Payette and Fishler bidding the highest. Even though the comics do not exhibit any distinctive markings, nearly every copy has retained its provenance.", media="../static/images/pedigrees/allentown.jpg")
+
+
+
+# Add new messages to session, so they'll persist
+db.session.add(ped1)
+# db.session.add(ofr2)
+# db.session.add(ofr3)
+
 db.session.commit()
