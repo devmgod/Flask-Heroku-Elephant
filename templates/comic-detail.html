@@ -8,7 +8,7 @@
 {% endblock %}
 
 
-{% block content %}
+{% block content %} 
 
 
     <h1>Comic Detail</h1>
@@ -129,7 +129,7 @@
                 <input type="text" 
                 id="issuenumber" 
                 name="issuenumber" 
-                value="{{ comic.issue_num}}"
+                value="{{ comic.issuenumber}}"
                 class="form-control" 
                 autocomplete="off"
                 style="
@@ -203,7 +203,7 @@
                 <input type="number" 
                 id="price" 
                 name="price"
-                value="{{ comic.assessed_value }}"
+                value="{{ comic.price }}"
                 class="form-control" 
                 autocomplete="off"
                 style="
@@ -348,7 +348,7 @@
                             <input type="number" 
                             id="grade" 
                             name="grade" 
-                            value="{{ comic.cgc_grade }}"
+                            value="{{ comic.grade }}"
                             class="form-control" 
                             autocomplete="off"
                             style="
