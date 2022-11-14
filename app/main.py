@@ -4,20 +4,20 @@ from flask import Flask, request, render_template, redirect, flash, session, jso
 # from flask_uploads import configure_uploads, IMAGES, UploadSet
 # import forms
 # import json 
-from models import db, connect_db, Msg, User, Comic
+from .models import db, connect_db, Msg, User, Comic
 from os import getenv
 # import requests, base64
 # import socket
 # from flowershop import *
 # import pdb
 
-from forms import EditComicsForm, SubscriptionForm
+from .forms import EditComicsForm, SubscriptionForm
 # from date_and_time_functions import *
 
 # from CRUD_psql import * 
 
 #TODO: TEMPORARY - ***** move these to environment variables and put in heroku *****
-from my_secrets import API_SECRET_KEY
+from .my_secrets import API_SECRET_KEY
 
 # ****NEED TO ALSO INSTALL Flask-Reloaded in requirements TO FIX BUGS IN flask_uploads!!!
 
