@@ -454,3 +454,9 @@ def markedasmailed():
     """
  
     return render_template("markedasmailed.html")
+
+
+if __name__ == "__main__":
+    from waitress import serve
+    serve(app)
+    # serve(app, host="66.94.115.164", port=80)
