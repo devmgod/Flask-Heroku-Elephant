@@ -28,4 +28,23 @@ psql -U postgres -d dvdrental //In this command, the -d flag means database. In 
 
  flask run -h localhost -p 80
 
-you need to buy a domain for integration your project to heroku
+pip install gunicorn
+pip install psycopg2
+pip freeze > requirements.txt
+echo web: gunicorn app:app > Procfile
+heroku login
+heroku create comicswap2
+heroku addons:create heroku-postgresql:hobby-dev --app comicswap2
+heroku config --app comicswap2
+git add .
+git commit -am "tweaked app for heroku"
+git push
+git push heroku master
+
+heroku run python
+from app import db
+db.create_all()
+
+
+pip install wheel
+python app.py bdist_wheel
