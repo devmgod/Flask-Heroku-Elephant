@@ -32,8 +32,8 @@ app=Flask(__name__)
 
 # original local postgresql db
 
-# app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:1@localhost:5432/comicswap2'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://rzxqdtuptkefuj:2a1f447f0c49cad2f0bb6c8624a68f47577a2385b4f51adc8e46c4ec4d9d1d14@ec2-35-170-21-76.compute-1.amazonaws.com:5432/d9red4pisaidqd'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:1@localhost:5432/comicswap2'
+# app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://rzxqdtuptkefuj:2a1f447f0c49cad2f0bb6c8624a68f47577a2385b4f51adc8e46c4ec4d9d1d14@ec2-35-170-21-76.compute-1.amazonaws.com:5432/d9red4pisaidqd'
 
 #secure variables
 #At ElephantSQL
@@ -458,5 +458,5 @@ def markedasmailed():
 
 if __name__ == "__main__":
     from waitress import serve
-    serve(app)
-    # serve(app, host="66.94.115.164", port=80)
+    serve(app, host="0.0.0.0", port=80)
+    # serve(app)
