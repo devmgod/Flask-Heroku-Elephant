@@ -4,7 +4,7 @@ from flask import Flask, request, render_template, redirect, flash, session
 # from flask_uploads import configure_uploads, IMAGES, UploadSet
 # import forms
 # import json 
-from models import db, connect_db, Msg, User, Comic
+from .models import db, connect_db, Msg, User, Comic
 from os import getenv
 # import requests, base64
 # import socket
