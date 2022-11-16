@@ -1,7 +1,7 @@
 """Seed file to make sample data for comicswap2 db."""
 
 from models import db, Msg, User, Comic
-from app import app
+from main import app
 
 # Create all tables
 with app.app_context():
