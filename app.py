@@ -33,7 +33,7 @@ app=Flask(__name__)
 # original local postgresql db
 
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:1@localhost:5432/comicswap2'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://nxsuiahlyozoku:6d41d310884c8b9761fdc9ffe5d06828e1d994fdc3e7b4da0651a536fc7b8150@ec2-3-229-252-6.compute-1.amazonaws.com:5432/d4g4724dllglc5'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://avxgtkfcevfqzj:a0fbe2cd6e9eec4915e34380038d0774157b76d7d4624ef8549351aa8230b533@ec2-54-159-175-38.compute-1.amazonaws.com:5432/dfv5396fcirk5i'
 
 #secure variables
 #At ElephantSQL
