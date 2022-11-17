@@ -2,7 +2,7 @@
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 
-db=SQLAlchemy()
+db = SQLAlchemy()
 
 def connect_db(app):
     db.app = app 
